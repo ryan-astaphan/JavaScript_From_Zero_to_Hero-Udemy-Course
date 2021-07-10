@@ -11,3 +11,6 @@ console.log(typeof isIsland);
 console.log(typeof population);
 console.log(typeof language);
 console.log(typeof country);
+
+language = 'Thai';
+const thailandIsIsland = false;
