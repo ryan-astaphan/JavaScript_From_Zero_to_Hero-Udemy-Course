@@ -44,3 +44,21 @@
 // - var should no longer be used, but we learn it for legacy purposes
 // 4) in JS variables can be assigned values without properly declaring them
 // with let, const or var. However this is a bad practice and we will later learn why
+
+//  String concatenation
+const firstName = 'Ryan';
+const lastName = 'Astaphan';
+console.log(firstName + ' ' + lastName);
+
+// Assignment operators
+let x = 2 + 3;
+x += 5;
+x *= 5;
+x++; // x = x + 1
+x--; // x = x - 1
+console.log(x);
+
+// Comparison operators: >, <, >=, <=
+console.log(5 > 3);
+console.log(5 < 3);
+console.log(37 - 15 < 99 - 10);
