@@ -56,9 +56,17 @@
 
 // LECTURE: String and Template Literals
 const myCountry = 'Thailand';
-const myContinent = 'Asia';
+// const myContinent = 'Asia';
 const countryPopulation = 69;
-const countryLanguage = 'Thai';
+// const countryLanguage = 'Thai';
 
-const templateLiteralPractice = `${myCountry} is in ${myContinent}, and its ${countryPopulation} million people speak ${countryLanguage}.`;
-console.log(templateLiteralPractice);
+// const templateLiteralPractice = `${myCountry} is in ${myContinent}, and its ${countryPopulation} million people speak ${countryLanguage}.`;
+// console.log(templateLiteralPractice);
+
+
+// LECTURE If / Else Statements
+if (countryPopulation > 33) {
+    console.log(`${myCountry}'s population is above average.`);
+} else {
+    console.log(`${myCountry}'s population is ${33 - countryPopulation} million below average.`);
+}

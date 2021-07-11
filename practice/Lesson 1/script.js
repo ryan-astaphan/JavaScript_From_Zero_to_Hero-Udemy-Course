@@ -68,21 +68,41 @@
 
 
 // Strings and template literals
-const firstName = 'Ryan';
-const job = 'programmer';
-const birthYear = 1985;
-const currentYear = 2021;
+// const firstName = 'Ryan';
+// const job = 'programmer';
+// const birthYear = 1985;
+// const currentYear = 2021;
 
-const ryan = "I'm " + firstName + ', a ' + (currentYear -
-    birthYear) + ' years old ' + job + '!';
-console.log('string concatenation')
-console.log(ryan);
+// const ryan = "I'm " + firstName + ', a ' + (currentYear -
+//     birthYear) + ' years old ' + job + '!';
+// console.log('string concatenation')
+// console.log(ryan);
 
-const ryanTemplateLiteral = `I'm ${firstName}, a ${currentYear -
-    birthYear} years old ${job}!`;
-console.log('template literal');
-console.log(ryanTemplateLiteral);
+// const ryanTemplateLiteral = `I'm ${firstName}, a ${currentYear -
+//     birthYear} years old ${job}!`;
+// console.log('template literal');
+// console.log(ryanTemplateLiteral);
 // With template literals new lines can simply be returned,
 // they don't need special characters.
 // Also, all strings can be written with the backtick charcacter,
 // instead of single or double quotes.
+
+// if else statements
+const age = 15;
+
+if (age >= 16) {
+    console.log('You are old enough to start driving.');
+} else {
+    const yearsLeft = 16 - age;
+    console.log(`You are too young to drive. You need to wait ${yearsLeft} years.`);
+};
+
+const birthYear = 1985;
+let century; // variables must be defined outside of code-blocks
+
+if (birthYear <= 2000) {
+    century = 'You were born in the 20th century.';
+} else {
+    century = 'You were born in the 21st century.';
+}
+console.log(century)
