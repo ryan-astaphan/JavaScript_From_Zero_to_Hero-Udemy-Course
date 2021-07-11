@@ -46,19 +46,22 @@
 // with let, const or var. However this is a bad practice and we will later learn why
 
 //  String concatenation
-const firstName = 'Ryan';
-const lastName = 'Astaphan';
-console.log(firstName + ' ' + lastName);
+// const firstName = 'Ryan';
+// const lastName = 'Astaphan';
+// console.log(firstName + ' ' + lastName);
 
 // Assignment operators
-let x = 2 + 3;
-x += 5;
-x *= 5;
-x++; // x = x + 1
-x--; // x = x - 1
-console.log(x);
+// let x = 2 + 3;
+// x += 5;
+// x *= 5;
+// x++; // x = x + 1
+// x--; // x = x - 1
+// console.log(x);
 
 // Comparison operators: >, <, >=, <=
-console.log(5 > 3);
-console.log(5 < 3);
-console.log(37 - 15 < 99 - 10);
+// console.log(5 > 3);
+// console.log(5 < 3);
+// console.log(37 - 15 < 99 - 10);
+
+// Operator precedence 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
