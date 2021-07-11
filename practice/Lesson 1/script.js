@@ -65,3 +65,24 @@
 
 // Operator precedence 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+
+// Strings and template literals
+const firstName = 'Ryan';
+const job = 'programmer';
+const birthYear = 1985;
+const currentYear = 2021;
+
+const ryan = "I'm " + firstName + ', a ' + (currentYear -
+    birthYear) + ' years old ' + job + '!';
+console.log('string concatenation')
+console.log(ryan);
+
+const ryanTemplateLiteral = `I'm ${firstName}, a ${currentYear -
+    birthYear} years old ${job}!`;
+console.log('template literal');
+console.log(ryanTemplateLiteral);
+// With template literals new lines can simply be returned,
+// they don't need special characters.
+// Also, all strings can be written with the backtick charcacter,
+// instead of single or double quotes.
