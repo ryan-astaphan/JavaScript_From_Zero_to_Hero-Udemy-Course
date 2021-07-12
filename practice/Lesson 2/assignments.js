@@ -1,14 +1,45 @@
 'use strict';
 
-function describeCountry(country, population, capitalCity) {
-    const countryInfo = `${country} has ${population} million people and its capital city is ${capitalCity}.`;
-    return countryInfo;
+// LECTURE: Functions
+// function describeCountry(country, population, capitalCity) {
+//     const countryInfo = `${country} has ${population} million people and its capital city is ${capitalCity}.`;
+//     return countryInfo;
+// }
+
+// const thailand = describeCountry('Thailand', 69, 'Bangkok');
+// const stKitts = describeCountry('St. Kitts', 1, 'Basseterre');
+// const colombia = describeCountry('Colombia', 50, 'Bogota');
+
+// console.log(thailand);
+// console.log(stKitts);
+// console.log(colombia);
+
+
+// LECTURE: Function Declarations vs Expressions
+
+// #1 Function declaration
+function percentageOfWorldPopulation(population) {
+    return (population / 7900) * 100;
 }
 
-const thailand = describeCountry('Thailand', 69, 'Bangkok');
-const stKitts = describeCountry('St. Kitts', 1, 'Basseterre');
-const colombia = describeCountry('Colombia', 50, 'Bogota');
-
+const thailand = percentageOfWorldPopulation(79);
 console.log(thailand);
-console.log(stKitts);
-console.log(colombia);
+
+const usa = percentageOfWorldPopulation(328);
+console.log(usa);
+
+const indonesia = percentageOfWorldPopulation(270);
+console.log(indonesia);
+
+// #2 Function expression
+const population2 = function (population) {
+    return (population / 7900) * 100;
+}
+const thailand2 = population2(79);
+console.log(thailand2);
+
+const usa2 = population2(328);
+console.log(usa2);
+
+const indonesia2 = population2(270);
+console.log(indonesia2);
