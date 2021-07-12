@@ -99,3 +99,14 @@
 // console.log(c);
 // console.log(d);
 // console.log(e);
+
+
+// LECTURE: Equality operators: == vs ===
+const neighboringCountries = Number(prompt("How many nations border your country?"));
+if (neighboringCountries === 1) {
+    console.log("Only 1 bordering country.");
+} else if (neighboringCountries > 1) {
+    console.log("More than 1 bordering country");
+} else {
+    console.log("You must be on an island.");
+}

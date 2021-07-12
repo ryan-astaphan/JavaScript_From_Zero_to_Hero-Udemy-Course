@@ -137,24 +137,54 @@
 // TRUTHY and FALSY Values
 // 5 falsy values: 0, '', undefined, null, NaN
 // everything else is truthy 
-console.log(Boolean(0));
-console.log(Boolean(undefined));
-console.log(Boolean(''));
-console.log(Boolean(null));
-console.log(Boolean(NaN));
-console.log(Boolean(1));
-console.log(Boolean('Hi'));
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean(''));
+// console.log(Boolean(null));
+// console.log(Boolean(NaN));
+// console.log(Boolean(1));
+// console.log(Boolean('Hi'));
 
-const money = 0;
-if (money) {
-    console.log("Don't spend all your money!");
+// const money = 0;
+// if (money) {
+//     console.log("Don't spend all your money!");
+// } else {
+//     console.log("You have no money.");
+// }
+
+// let thingToSay;
+// if (thingToSay) {
+//     console.log('I am never lost for words!');
+// } else {
+//     console.log('I am lost for words.');
+// }
+
+
+// EQUALITY OPERATORS: == vs === 
+// LOOSE equality vs STRICT equality
+// The difference between == and === is that: == converts the variable values 
+// to the same type before performing comparison. This is called type coercion. 
+// === does not do any type conversion (coercion) and returns true only 
+// if both values and types are identical for the two variables being compared.
+
+console.log('18' == 18); // outputs as true due to type coercion
+console.log('18' === 18); // outputs to false
+
+// As a rule of thumb, always use the strict equality operator ===
+// Don't use loose equality. Even if you need type coercion, just do
+// manual type conversion
+
+const favNumber = Number(prompt("What's your favorite number?"));
+
+if (favNumber === 13) {
+    console.log("That's not a very lucky number, is it?");
+} else if (favNumber === 7) {
+    console.log("Now that's a lucky number!");
+} else if (favNumber === 0) {
+    console.log("Really?!");
 } else {
-    console.log("You have no money.");
+    console.log("Ok. Nice number.");
 }
 
-let thingToSay;
-if (thingToSay) {
-    console.log('I am never lost for words!');
-} else {
-    console.log('I am lost for words.');
-}
+// LOOSE and STRICT INEQUALITY Operators: != and !==
+// Best practice is to use the strict version.
