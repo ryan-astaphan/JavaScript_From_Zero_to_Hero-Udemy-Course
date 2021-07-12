@@ -4,7 +4,7 @@
 // let population = 70
 
 // // LECTURE: Data Types
-let isIsland = false;
+// let isIsland = false;
 // let language;
 
 // // console.log(typeof isIsland);
@@ -55,10 +55,10 @@ let isIsland = false;
 
 
 // LECTURE: String and Template Literals
-const myCountry = 'Thailand';
-// const myContinent = 'Asia';
-const countryPopulation = 69;
-const countryLanguage = 'Thai';
+// const myCountry = 'Thailand';
+// // const myContinent = 'Asia';
+// const countryPopulation = 69;
+// const countryLanguage = 'Thai';
 
 // const templateLiteralPractice = `${myCountry} is in ${myContinent}, and its ${countryPopulation} million people speak ${countryLanguage}.`;
 // console.log(templateLiteralPractice);
@@ -113,8 +113,54 @@ const countryLanguage = 'Thai';
 
 
 // LECTURE: Logical Operators
-if (countryLanguage === 'English' && countryPopulation < 50 && !isIsland) {
-    console.log(`Sarah should move to ${myCountry}.`)
+// if (countryLanguage === 'English' && countryPopulation < 50 && !isIsland) {
+//     console.log(`Sarah should move to ${myCountry}.`)
+// } else {
+//     console.log(`${myCountry} is not the right place for Sarah to live.`)
+// }
+
+
+// CODING CHALLENGE #3
+// competition #1
+console.log('Competition #1');
+const dolphinsAvgScore = (96 + 108 + 89) / 3;
+const koalasAvgScore = (88 + 91 + 110) / 3
+
+if (dolphinsAvgScore > koalasAvgScore) {
+    console.log('The Dolphins have won the championship!');
+} else if (koalasAvgScore > dolphinsAvgScore) {
+    console.log('The Koalas have won the championship!');
 } else {
-    console.log(`${myCountry} is not the right place for Sarah to live.`)
+    console.log('The competition is a draw!');
 }
+console.log('');
+
+// competition #2
+console.log('Competition #2');
+const dolphinsAvgScore2 = (97 + 112 + 101) / 3;
+const koalasAvgScore2 = (109 + 95 + 123) / 3
+
+if (dolphinsAvgScore2 > koalasAvgScore2 && dolphinsAvgScore2 >= 100) {
+    console.log('The Dolphins have won the championship!');
+} else if (koalasAvgScore2 > dolphinsAvgScore2 && koalasAvgScore2 >= 100) {
+    console.log('The Koalas have won the championship!');
+} else {
+    console.log('The competition is a draw!');
+}
+console.log('');
+
+// competition #3
+console.log('Competition #3');
+const dolphinsAvgScore3 = (97 + 112 + 101) / 3;
+const koalasAvgScore3 = (109 + 95 + 106) / 3
+
+if (dolphinsAvgScore3 > koalasAvgScore3 && dolphinsAvgScore3 >= 100) {
+    console.log('The Dolphins have won the championship!');
+} else if (koalasAvgScore3 > dolphinsAvgScore3 && koalasAvgScore3 >= 100) {
+    console.log('The Koalas have won the championship!');
+} else if (koalasAvgScore3 === dolphinsAvgScore3 && koalasAvgScore3 >= 100) {
+    console.log('The competition is a draw!');
+} else {
+    console.log('There is no winner!');
+}
+console.log('');

@@ -191,12 +191,12 @@
 
 
 // LOGICAL OPERATORS
-const hasDriversLicense = true;
-const hasGoodVision = true;
+// const hasDriversLicense = true;
+// const hasGoodVision = true;
 
-console.log(hasDriversLicense && hasGoodVision); // and operator
-console.log(hasDriversLicense || hasGoodVision); // or operator
-console.log(!hasDriversLicense); // not operator
+// console.log(hasDriversLicense && hasGoodVision); // and operator
+// console.log(hasDriversLicense || hasGoodVision); // or operator
+// console.log(!hasDriversLicense); // not operator
 
 // const shouldDrive = hasDriversLicense && hasGoodVision;
 
@@ -206,11 +206,11 @@ console.log(!hasDriversLicense); // not operator
 //     console.log('Someone else should drive, not you!');
 // }
 
-const isTired = false;
-console.log(hasDriversLicense && hasGoodVision && isTired);
+// const isTired = false;
+// console.log(hasDriversLicense && hasGoodVision && isTired);
 
-if (hasDriversLicense && hasGoodVision && !isTired) {
-    console.log('You can drive.');
-} else {
-    console.log("Don't drive.");
-}
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//     console.log('You can drive.');
+// } else {
+//     console.log("Don't drive.");
+// }
