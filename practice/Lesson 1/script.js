@@ -1,36 +1,36 @@
-// // let js = 'amazing';
-// // console.log(40 + 8 + 23 - 10);
+// let js = 'amazing';
+// console.log(40 + 8 + 23 - 10);
 
 // let firstName = 'Ryan'
-// // console.log(firstName);
+// console.log(firstName);
 
-// // let jsNamingConventions = "In this video the instructor went over \n
-// // camelCase and other rules and conventions";
+// let jsNamingConventions = "In this video the instructor went over \n
+// camelCase and other rules and conventions";
 
 // let javascriptIsFun = true;
 // console.log(javascriptIsFun);
 
-// // viewing data types with 'typeof'
-// // console.log(typeof true);
-// // console.log(typeof firstName);
-// // console.log(typeof 23);
-// // console.log(typeof 'true');
+// viewing data types with 'typeof'
+// console.log(typeof true);
+// console.log(typeof firstName);
+// console.log(typeof 23);
+// console.log(typeof 'true');
 // console.log(typeof javascriptIsFun);
 
-// // when RE-ASSIGNING a VALUE we do not use "let"
+// when RE-ASSIGNING a VALUE we do not use "let"
 // javascriptIsFun = 'Yes it is'
 // console.log(typeof javascriptIsFun);
 
-// // data type 'undefined'
+// data type 'undefined'
 // let year;
 // console.log(year);
 // console.log(typeof year);
 
-// // re-assigning once agian
+// re-assigning once agian
 // year = 1985;
 // console.log(typeof year);
 
-// // NULL - the typeof bug that never got fixed for legacy purposes
+// NULL - the typeof bug that never got fixed for legacy purposes
 // console.log(typeof null);
 
 // let, const & var
@@ -111,7 +111,7 @@
 // Type conversions
 // const yearOfBirth = '1985'
 // console.log(Number(yearOfBirth) + 18); // here the Number function is just outputting our string
-// // to a number type. It is not reassigning a number value to our value, as seen below
+// to a number type. It is not reassigning a number value to our value, as seen below
 // console.log(yearOfBirth + 18);  // the output here will be the original string value '1985'
 
 
@@ -120,7 +120,7 @@
 
 // console.log(String(23), 23); // the first 23 will return as a string, the 2nd as a number
 
-// // type coercions 
+// type coercions 
 // console.log('I am ' + 36 + ' years old.'); //This is type coersion, 36 is converted to a string due to the plus symbol
 // console.log('23' - '10' - 3); // Output is the number 10. The minus sign converts the strings to numbers
 // console.log('22' * '2'); // Output is 44. The multiplication sign converts the strings to numbers
@@ -170,9 +170,9 @@
 // console.log('18' == 18); // outputs as true due to type coercion
 // console.log('18' === 18); // outputs to false
 
-// // As a rule of thumb, always use the strict equality operator ===
-// // Don't use loose equality. Even if you need type coercion, just do
-// // manual type conversion
+// As a rule of thumb, always use the strict equality operator ===
+// Don't use loose equality. Even if you need type coercion, just do
+// manual type conversion
 
 // const favNumber = Number(prompt("What's your favorite number?"));
 
@@ -216,7 +216,7 @@
 // }
 
 
-// // SWITCH STATEMENT
+// SWITCH STATEMENT
 // const day = 'tuesday';
 
 // switch (day) {
@@ -259,23 +259,23 @@
 
 
 // LECTURE: Conditional operator (Ternary Operator)
-const age = 36;
+// const age = 36;
 // age >= 18 ? console.log('I like to drink 🍷') :
 //     console.log('I like to drink 💧');
 
-const drink = age >= 18 ? 'wine 🍷' : 'water 💧';
-console.log(drink);
+// const drink = age >= 18 ? 'wine 🍷' : 'water 💧';
+// console.log(drink);
 
-const age2 = 16;
-let drink2;
-if (age2 >= 18) {
-    drink2 = 'wine 🍷';
-} else {
-    drink2 = 'water 💧';
-}
-console.log(drink2)
+// const age2 = 16;
+// let drink2;
+// if (age2 >= 18) {
+//     drink2 = 'wine 🍷';
+// } else {
+//     drink2 = 'water 💧';
+// }
+// console.log(drink2)
 
 // Ternary statements can be in template literals
-console.log(`I like to drink ${drink}`); // here we use a variable that equals a ternary operator
+// console.log(`I like to drink ${drink}`); // here we use a variable that equals a ternary operator
 // or with the full ternary operator:
-console.log(`I like to drink ${age2 >= 18 ? 'wine 🍷' : 'water 💧'}`);
+// console.log(`I like to drink ${age2 >= 18 ? 'wine 🍷' : 'water 💧'}`);

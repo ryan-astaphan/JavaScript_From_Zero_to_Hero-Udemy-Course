@@ -191,6 +191,21 @@
 
 
 // LECTURE: Ternary Operator
-const countryPopulation = 69;
-console.log(countryPopulation >= 33 ? `Thailand's population is above average` :
-    `Thailand's population is below average.`)
+// const countryPopulation = 69;
+// console.log(countryPopulation >= 33 ? `Thailand's population is above average` :
+//     `Thailand's population is below average.`)
+
+
+// CODING CHALLENGE #4
+const bill1 = 275;
+const bill2 = 40;
+const bill3 = 430;
+
+tip1 = bill1 >= 50 && bill1 <= 300 ? 0.15 : 0.20;
+console.log(`The bill was ${bill1}, the tip was ${bill1 * tip1}. and the total value ${bill1 + (bill1 * tip1)}.`);
+
+tip2 = bill2 >= 50 && bill1 <= 300 ? 0.15 : 0.20;
+console.log(`The 2nd bill was ${bill2}, the tip was ${bill2 * tip2}. and the total value ${bill2 + (bill2 * tip2)}.`);
+
+tip3 = bill3 >= 50 && bill3 <= 300 ? 0.15 : 0.20;
+console.log(`The 3rd bill was ${bill3}, the tip was ${bill3 * tip3}. and the total value ${bill1 + (bill3 * tip3)}.`);
