@@ -1,10 +1,26 @@
-'use strict'; // This code turns on strict mode. 
-// For strict mode to work, it has to be the first line of code in the file.
+'use strict';
 
-let hasDriversLicense = false;
-const passTest = true;
+function logger() {
+    console.log('My name is Ryan');
+}
 
-if (passTest) hasDriverLicense = true; // strict mode will call a Reference error
-if (hasDriversLicense) console.log("I can drive.")
+// calling / running / or invoking the function
+logger();
+logger();
+logger();
 
-const interface = 'Audio'; // strict mode will raise a SyntaxError
+
+function fruitProcessor(apples, oranges) {
+    // console.log(apples, oranges);
+    const juice = `Ingredients: ${apples} apples and ${oranges} oranges.`;
+    return juice;
+}
+
+const ryansFruitJuice = fruitProcessor(2, 3);
+console.log(ryansFruitJuice);
+
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+
+const orangeJuice = fruitProcessor(0, 3);
+console.log(orangeJuice)
