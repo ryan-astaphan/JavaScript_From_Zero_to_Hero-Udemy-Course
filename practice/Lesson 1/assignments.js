@@ -88,14 +88,14 @@
 
 // LECTURE: Typer Conversion and Coercion
 // Predictions
-a = '9' - '5'; // minus sign converts strings to numbers, so output should be the # 4
-b = '19' - '13' + '17'; // (6 + '17') ... output should be the string '617'
-c = '19' - '13' + 17; // output should be 23
-d = '123' < 57; // Output will be false
-e = 5 + 6 + '4' + 9 - 4 - 2; // (11 + '4' = '114') .... '114' + 9 - 4 - 2
-// '1149' - 4 - 2 = 1143
-console.log(a);
-console.log(b);
-console.log(c);
-console.log(d);
-console.log(e);
+// a = '9' - '5'; // minus sign converts strings to numbers, so output should be the # 4
+// b = '19' - '13' + '17'; // (6 + '17') ... output should be the string '617'
+// c = '19' - '13' + 17; // output should be 23
+// d = '123' < 57; // Output will be false
+// e = 5 + 6 + '4' + 9 - 4 - 2; // (11 + '4' = '114') .... '114' + 9 - 4 - 2
+// // '1149' - 4 - 2 = 1143
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+// console.log(e);
