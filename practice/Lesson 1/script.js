@@ -214,3 +214,45 @@
 // } else {
 //     console.log("Don't drive.");
 // }
+
+
+// SWITCH STATEMENT
+const day = 'tuesday';
+
+switch (day) {
+    case 'monday':
+        console.log('Sing about monday');
+        console.log('Play soccer');
+        break;
+    case 'tuesday':
+        console.log('Pick up the kids');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Practice muay thai.');
+        break;
+    case 'friday':
+        console.log('Get ready for the weekend.');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Relax.')
+        break;
+    default:
+        console.log(`That's not a valid day.`)
+}
+
+if (day === 'monday') {
+    console.log('Sing about monday');
+    console.log('Play soccer');
+} else if (day === 'tuesday') {
+    console.log('Pick up the kids');
+} else if (day === 'wednesday' || day === 'thursday') {
+    console.log('Practice muay thai');
+} else if (day === 'friday') {
+    console.log('Get ready for the weekend');
+} else if (day === 'saturday' || day === 'sunday') {
+    console.log(Relax);
+} else {
+    console.log(`That's not a valid day.`);
+}
