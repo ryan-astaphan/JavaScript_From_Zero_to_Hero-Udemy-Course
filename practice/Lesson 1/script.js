@@ -216,43 +216,66 @@
 // }
 
 
-// SWITCH STATEMENT
-const day = 'tuesday';
+// // SWITCH STATEMENT
+// const day = 'tuesday';
 
-switch (day) {
-    case 'monday':
-        console.log('Sing about monday');
-        console.log('Play soccer');
-        break;
-    case 'tuesday':
-        console.log('Pick up the kids');
-        break;
-    case 'wednesday':
-    case 'thursday':
-        console.log('Practice muay thai.');
-        break;
-    case 'friday':
-        console.log('Get ready for the weekend.');
-        break;
-    case 'saturday':
-    case 'sunday':
-        console.log('Relax.')
-        break;
-    default:
-        console.log(`That's not a valid day.`)
-}
+// switch (day) {
+//     case 'monday':
+//         console.log('Sing about monday');
+//         console.log('Play soccer');
+//         break;
+//     case 'tuesday':
+//         console.log('Pick up the kids');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Practice muay thai.');
+//         break;
+//     case 'friday':
+//         console.log('Get ready for the weekend.');
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log('Relax.')
+//         break;
+//     default:
+//         console.log(`That's not a valid day.`)
+// }
 
-if (day === 'monday') {
-    console.log('Sing about monday');
-    console.log('Play soccer');
-} else if (day === 'tuesday') {
-    console.log('Pick up the kids');
-} else if (day === 'wednesday' || day === 'thursday') {
-    console.log('Practice muay thai');
-} else if (day === 'friday') {
-    console.log('Get ready for the weekend');
-} else if (day === 'saturday' || day === 'sunday') {
-    console.log(Relax);
+// if (day === 'monday') {
+//     console.log('Sing about monday');
+//     console.log('Play soccer');
+// } else if (day === 'tuesday') {
+//     console.log('Pick up the kids');
+// } else if (day === 'wednesday' || day === 'thursday') {
+//     console.log('Practice muay thai');
+// } else if (day === 'friday') {
+//     console.log('Get ready for the weekend');
+// } else if (day === 'saturday' || day === 'sunday') {
+//     console.log(Relax);
+// } else {
+//     console.log(`That's not a valid day.`);
+// }
+
+
+// LECTURE: Conditional operator (Ternary Operator)
+const age = 36;
+// age >= 18 ? console.log('I like to drink 🍷') :
+//     console.log('I like to drink 💧');
+
+const drink = age >= 18 ? 'wine 🍷' : 'water 💧';
+console.log(drink);
+
+const age2 = 16;
+let drink2;
+if (age2 >= 18) {
+    drink2 = 'wine 🍷';
 } else {
-    console.log(`That's not a valid day.`);
+    drink2 = 'water 💧';
 }
+console.log(drink2)
+
+// Ternary statements can be in template literals
+console.log(`I like to drink ${drink}`); // here we use a variable that equals a ternary operator
+// or with the full ternary operator:
+console.log(`I like to drink ${age2 >= 18 ? 'wine 🍷' : 'water 💧'}`);

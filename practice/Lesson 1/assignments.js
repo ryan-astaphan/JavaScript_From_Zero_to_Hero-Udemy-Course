@@ -167,24 +167,30 @@
 
 
 // LECTURE: Switch Statement
-const language = prompt('What language do you speak?');
+// const language = prompt('What language do you speak?');
 
-switch (language) {
-    case 'mandarin':
-        console.log('You speak the most spoken language in the world.');
-        break;
-    case 'spanish':
-        console.log('Spanish has the 2nd most native speakers in the world.');
-        break;
-    case 'english':
-        console.log('Third place');
-        break;
-    case 'hindi':
-        console.log('4th place');
-        break;
-    case 'arabic':
-        console.log('5th most spoken language');
-        break;
-    default:
-        console.log(`${language} is a great language too`);
-}
+// switch (language) {
+//     case 'mandarin':
+//         console.log('You speak the most spoken language in the world.');
+//         break;
+//     case 'spanish':
+//         console.log('Spanish has the 2nd most native speakers in the world.');
+//         break;
+//     case 'english':
+//         console.log('Third place');
+//         break;
+//     case 'hindi':
+//         console.log('4th place');
+//         break;
+//     case 'arabic':
+//         console.log('5th most spoken language');
+//         break;
+//     default:
+//         console.log(`${language} is a great language too`);
+// }
+
+
+// LECTURE: Ternary Operator
+const countryPopulation = 69;
+console.log(countryPopulation >= 33 ? `Thailand's population is above average` :
+    `Thailand's population is below average.`)
