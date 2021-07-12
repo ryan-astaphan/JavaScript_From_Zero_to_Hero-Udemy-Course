@@ -4,7 +4,7 @@
 // let population = 70
 
 // // LECTURE: Data Types
-// let isIsland = false;
+let isIsland = false;
 // let language;
 
 // // console.log(typeof isIsland);
@@ -55,10 +55,10 @@
 
 
 // LECTURE: String and Template Literals
-// const myCountry = 'Thailand';
+const myCountry = 'Thailand';
 // const myContinent = 'Asia';
-// const countryPopulation = 69;
-// const countryLanguage = 'Thai';
+const countryPopulation = 69;
+const countryLanguage = 'Thai';
 
 // const templateLiteralPractice = `${myCountry} is in ${myContinent}, and its ${countryPopulation} million people speak ${countryLanguage}.`;
 // console.log(templateLiteralPractice);
@@ -102,11 +102,19 @@
 
 
 // LECTURE: Equality operators: == vs ===
-const neighboringCountries = Number(prompt("How many nations border your country?"));
-if (neighboringCountries === 1) {
-    console.log("Only 1 bordering country.");
-} else if (neighboringCountries > 1) {
-    console.log("More than 1 bordering country");
+// const neighboringCountries = Number(prompt("How many nations border your country?"));
+// if (neighboringCountries === 1) {
+//     console.log("Only 1 bordering country.");
+// } else if (neighboringCountries > 1) {
+//     console.log("More than 1 bordering country");
+// } else {
+//     console.log("You must be on an island.");
+// }
+
+
+// LECTURE: Logical Operators
+if (countryLanguage === 'English' && countryPopulation < 50 && !isIsland) {
+    console.log(`Sarah should move to ${myCountry}.`)
 } else {
-    console.log("You must be on an island.");
+    console.log(`${myCountry} is not the right place for Sarah to live.`)
 }

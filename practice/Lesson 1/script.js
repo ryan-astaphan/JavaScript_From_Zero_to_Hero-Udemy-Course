@@ -167,24 +167,50 @@
 // === does not do any type conversion (coercion) and returns true only 
 // if both values and types are identical for the two variables being compared.
 
-console.log('18' == 18); // outputs as true due to type coercion
-console.log('18' === 18); // outputs to false
+// console.log('18' == 18); // outputs as true due to type coercion
+// console.log('18' === 18); // outputs to false
 
-// As a rule of thumb, always use the strict equality operator ===
-// Don't use loose equality. Even if you need type coercion, just do
-// manual type conversion
+// // As a rule of thumb, always use the strict equality operator ===
+// // Don't use loose equality. Even if you need type coercion, just do
+// // manual type conversion
 
-const favNumber = Number(prompt("What's your favorite number?"));
+// const favNumber = Number(prompt("What's your favorite number?"));
 
-if (favNumber === 13) {
-    console.log("That's not a very lucky number, is it?");
-} else if (favNumber === 7) {
-    console.log("Now that's a lucky number!");
-} else if (favNumber === 0) {
-    console.log("Really?!");
-} else {
-    console.log("Ok. Nice number.");
-}
+// if (favNumber === 13) {
+//     console.log("That's not a very lucky number, is it?");
+// } else if (favNumber === 7) {
+//     console.log("Now that's a lucky number!");
+// } else if (favNumber === 0) {
+//     console.log("Really?!");
+// } else {
+//     console.log("Ok. Nice number.");
+// }
 
 // LOOSE and STRICT INEQUALITY Operators: != and !==
 // Best practice is to use the strict version.
+
+
+// LOGICAL OPERATORS
+const hasDriversLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLicense && hasGoodVision); // and operator
+console.log(hasDriversLicense || hasGoodVision); // or operator
+console.log(!hasDriversLicense); // not operator
+
+// const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if (shouldDrive) {
+//     console.log('You are good to drive!');
+// } else {
+//     console.log('Someone else should drive, not you!');
+// }
+
+const isTired = false;
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log('You can drive.');
+} else {
+    console.log("Don't drive.");
+}
