@@ -27,19 +27,36 @@
 // console.log(orangeJuice)
 
 
+
 // LECTURE: Function declarations vs expressions
 // 1) one major difference between declarations and expressions
 // is that DECLARATIONS can be called before they are defined
 
 // this is a function DECLARATION
-const ryansAge = calcAge(1985); // it's ok to call the function before defining it
-function calcAge(birthYear) {
-    return 2021 - birthYear;
+// const ryansAge = calcAge(1985); // it's ok to call the function before defining it
+// function calcAge(birthYear) {
+//     return 2021 - birthYear;
+// }
+
+// // this is a function EXPRESSION
+// const calcAge2 = function (birthYear) {
+//     return 2021 - birthYear;
+// }
+// const age2 = calcAge2(1981);
+// console.log(ryansAge, age2);
+
+
+
+// LECTURE: Arrow Functions
+const calcAge3 = birthYear => 2021 - birthYear;
+const age3 = calcAge3(1985);
+console.log(age3)
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2021 - birthYear;
+    const retirement = 65 - age;
+    return `${firstName} has ${retirement} years left until retirement.`;
 }
 
-// this is a function EXPRESSION
-const calcAge2 = function (birthYear) {
-    return 2021 - birthYear;
-}
-const age2 = calcAge2(1981);
-console.log(ryansAge, age2);
+console.log(yearsUntilRetirement(1985, 'Ryan'));
+console.log(yearsUntilRetirement(1981, 'David'));

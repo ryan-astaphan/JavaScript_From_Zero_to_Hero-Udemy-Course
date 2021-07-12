@@ -18,28 +18,40 @@
 // LECTURE: Function Declarations vs Expressions
 
 // #1 Function declaration
-function percentageOfWorldPopulation(population) {
-    return (population / 7900) * 100;
-}
+// function percentageOfWorldPopulation(population) {
+//     return (population / 7900) * 100;
+// }
 
-const thailand = percentageOfWorldPopulation(79);
-console.log(thailand);
+// const thailand = percentageOfWorldPopulation(79);
+// console.log(thailand);
 
-const usa = percentageOfWorldPopulation(328);
-console.log(usa);
+// const usa = percentageOfWorldPopulation(328);
+// console.log(usa);
 
-const indonesia = percentageOfWorldPopulation(270);
-console.log(indonesia);
+// const indonesia = percentageOfWorldPopulation(270);
+// console.log(indonesia);
 
-// #2 Function expression
-const population2 = function (population) {
-    return (population / 7900) * 100;
-}
-const thailand2 = population2(79);
-console.log(thailand2);
+// // #2 Function expression
+// const population2 = function (population) {
+//     return (population / 7900) * 100;
+// }
+// const thailand2 = population2(79);
+// console.log(thailand2);
 
-const usa2 = population2(328);
-console.log(usa2);
+// const usa2 = population2(328);
+// console.log(usa2);
 
-const indonesia2 = population2(270);
-console.log(indonesia2);
+// const indonesia2 = population2(270);
+// console.log(indonesia2);
+
+
+
+// LECTURE: Arrow Functions
+const percentWorldPopulation = (population) => (population / 7900) * 100;
+
+const thaiPop = percentWorldPopulation(79);
+const usaPop = percentWorldPopulation(328);
+const indoPop = percentWorldPopulation(270);
+console.log(thaiPop);
+console.log(usaPop);
+console.log(indoPop);
