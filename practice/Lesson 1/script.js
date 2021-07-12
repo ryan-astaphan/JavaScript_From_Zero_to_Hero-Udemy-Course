@@ -88,21 +88,47 @@
 // instead of single or double quotes.
 
 // if else statements
-const age = 15;
+// const age = 15;
 
-if (age >= 16) {
-    console.log('You are old enough to start driving.');
-} else {
-    const yearsLeft = 16 - age;
-    console.log(`You are too young to drive. You need to wait ${yearsLeft} years.`);
-};
+// if (age >= 16) {
+//     console.log('You are old enough to start driving.');
+// } else {
+//     const yearsLeft = 16 - age;
+//     console.log(`You are too young to drive. You need to wait ${yearsLeft} years.`);
+// };
 
-const birthYear = 1985;
-let century; // variables must be defined outside of code-blocks
+// const birthYear = 1985;
+// let century; // variables must be defined outside of code-blocks
 
-if (birthYear <= 2000) {
-    century = 'You were born in the 20th century.';
-} else {
-    century = 'You were born in the 21st century.';
-}
-console.log(century)
+// if (birthYear <= 2000) {
+//     century = 'You were born in the 20th century.';
+// } else {
+//     century = 'You were born in the 21st century.';
+// }
+// console.log(century)
+
+// Type Conversion and Coercion
+// Type conversions
+const yearOfBirth = '1985'
+console.log(Number(yearOfBirth) + 18); // here the Number function is just outputting our string
+// to a number type. It is not reassigning a number value to our value, as seen below
+console.log(yearOfBirth + 18);  // the output here will be the original string value '1985'
+
+
+console.log(Number('Ryan')); // this will log as 'NaN'
+console.log(typeof Nan); // the type for NaN is undefined
+
+console.log(String(23), 23); // the first 23 will return as a string, the 2nd as a number
+
+// type coercions 
+console.log('I am ' + 36 + ' years old.'); //This is type coersion, 36 is converted to a string due to the plus symbol
+console.log('23' - '10' - 3); // Output is the number 10. The minus sign converts the strings to numbers
+console.log('22' * '2'); // Output is 44. The multiplication sign converts the strings to numbers
+console.log('22' / '2'); // Output is a number, 11
+console.log('22' > '2'); // Output is true, the comparison operator converts the strings to numbers
+
+let n = '1' + 1; // Output is the string '11' because the plus sign converts numbers to strings for concatenation
+n = n - 1 // ('11' - 1) ... Minus sign converts strings to numbers
+console.log(n); // Output will be the number 10.
+
+console.log(2 + 3 + 4 + '5'); //Output will be '95'... 2+3+4 = 9 ... 9 + '5' = string concatenation
