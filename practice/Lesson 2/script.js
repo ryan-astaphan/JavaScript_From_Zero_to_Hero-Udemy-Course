@@ -163,23 +163,23 @@
 
 
 // LECTURE: Introduction to Objects
-const ryan = {
-    firstName: 'Ryan',
-    lastName: 'Astaphan',
-    age: 36,
-    nationality: 'American',
-    friends: ['Miguel', 'Jeff']
-};
+// const ryan = {
+//     firstName: 'Ryan',
+//     lastName: 'Astaphan',
+//     age: 36,
+//     nationality: 'American',
+//     friends: ['Miguel', 'Jeff']
+// };
 
 
 
 // LECTURE: Dot vs Bracket Notation
-console.log(ryan.nationality);
-console.log(ryan['nationality']);
+// console.log(ryan.nationality);
+// console.log(ryan['nationality']);
 
-const nameKey = 'Name';
-console.log(ryan['first' + nameKey]);
-console.log(ryan['last' + nameKey]);
+// const nameKey = 'Name';
+// console.log(ryan['first' + nameKey]);
+// console.log(ryan['last' + nameKey]);
 
 // const aboutRyan = prompt('What do you want to know about Ryan? Choose between firstName,\
 // lastName, age, nationality, and friends.');
@@ -191,14 +191,53 @@ console.log(ryan['last' + nameKey]);
 //  lastName, age, nationality, and friends.');
 // }
 
-ryan.location = 'Thailand';
-ryan['wife'] = 'Ahm';
-console.log(ryan);
+// ryan.location = 'Thailand';
+// ryan['wife'] = 'Ahm';
+// console.log(ryan);
 
-ryan.friends.push('Marco')
+// ryan.friends.push('Marco')
 
 // Challenge
-// Ryan has 3 friends and his best friend is named Marco.
+// Ryan has 3 friends and his best friend is named Miguel.
+// console.log(`${ryan.firstName} has ${ryan.friends.length} friends and \
+// his best friend is named ${ryan.friends[0]}.`);
 
-console.log(`${ryan.firstName} has ${ryan.friends.length} friends and \
-his best friend is named ${ryan.friends[0]}.`);
+
+
+// LECTURE: Object Methods
+const ryan = {
+    firstName: 'Ryan',
+    lastName: 'Astaphan',
+    birthYear: 1985,
+    nationality: 'American',
+    friends: ['Miguel', 'Jeff'],
+    isProfessionalSoccerPlayer: true,
+
+    // calcAge: function (birthYear) { // function EXPRESSIONS can exist within objects
+    //     return 2021 - birthYear; // function Declarations CANNOT 
+    // }
+
+    //     calcAge: function () { // function EXPRESSIONS can exist within objects
+    //         return 2021 - this.birthYear; // function Declarations CANNOT 
+    //     }
+    // };
+
+    calcAge: function () {
+        this.age = 2021 - this.birthYear;
+        return this.age;
+    },
+    // Challenge
+    // Ryan is a 36-year old American professional soccer player.
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.nationality} \
+and he ${this.isProfessionalSoccerPlayer ? 'is' : 'is not'} a professional soccer player.`
+    }
+};
+
+// console.log(ryan.calcAge());
+// console.log(ryan['calcAge']());
+// console.log(ryan.calcAge(ryan.birthYear));
+console.log(ryan.calcAge());
+console.log(ryan.age);
+console.log(ryan.getSummary());
+
