@@ -170,3 +170,35 @@ const ryan = {
     nationality: 'American',
     friends: ['Miguel', 'Jeff']
 };
+
+
+
+// LECTURE: Dot vs Bracket Notation
+console.log(ryan.nationality);
+console.log(ryan['nationality']);
+
+const nameKey = 'Name';
+console.log(ryan['first' + nameKey]);
+console.log(ryan['last' + nameKey]);
+
+// const aboutRyan = prompt('What do you want to know about Ryan? Choose between firstName,\
+// lastName, age, nationality, and friends.');
+
+// if (ryan[aboutRyan]) {
+//     console.log(ryan[aboutRyan]);
+// } else {
+//     console.log('We do not have that informaiton about Ryan. Please choose between firstName,\
+//  lastName, age, nationality, and friends.');
+// }
+
+ryan.location = 'Thailand';
+ryan['wife'] = 'Ahm';
+console.log(ryan);
+
+ryan.friends.push('Marco')
+
+// Challenge
+// Ryan has 3 friends and his best friend is named Marco.
+
+console.log(`${ryan.firstName} has ${ryan.friends.length} friends and \
+his best friend is named ${ryan.friends[0]}.`);

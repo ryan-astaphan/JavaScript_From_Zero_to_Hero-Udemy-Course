@@ -164,4 +164,21 @@ const myCountry = {
     population: 69,
     neighbors: ['Myanmar', 'Laos', 'Cambodia', 'Malaysia']
 };
-console.log(myCountry);
+// console.log(myCountry); // the object properties will list out alphabetically
+
+
+
+// LECTURE: Dot vs Bracket Notation
+console.log(`${myCountry.country} has ${myCountry.population} million \
+${myCountry.language}-speaking people, ${myCountry.neighbors.length} \
+neighboring countries and a capital called ${myCountry.capital}.`);
+
+myCountry.population += 2;
+console.log(myCountry.population);
+
+myCountry['population'] -= 20;
+console.log(myCountry.population);
+
+console.log(`${myCountry.country} has ${myCountry.population} million \
+${myCountry.language}-speaking people, ${myCountry.neighbors.length} \
+neighboring countries and a capital called ${myCountry.capital}.`);
