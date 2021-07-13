@@ -48,15 +48,32 @@
 
 
 // LECTURE: Arrow Functions
-const calcAge3 = birthYear => 2021 - birthYear;
-const age3 = calcAge3(1985);
-console.log(age3)
+// const calcAge3 = birthYear => 2021 - birthYear;
+// const age3 = calcAge3(1985);
+// console.log(age3)
 
-const yearsUntilRetirement = (birthYear, firstName) => {
-    const age = 2021 - birthYear;
-    const retirement = 65 - age;
-    return `${firstName} has ${retirement} years left until retirement.`;
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//     const age = 2021 - birthYear;
+//     const retirement = 65 - age;
+//     return `${firstName} has ${retirement} years left until retirement.`;
+// }
+
+// console.log(yearsUntilRetirement(1985, 'Ryan'));
+// console.log(yearsUntilRetirement(1981, 'David'));
+
+
+
+// LECTURE: Functions Calling Other Functions
+function cutFruitPiece(fruit) {
+    return fruit * 4;
 }
 
-console.log(yearsUntilRetirement(1985, 'Ryan'));
-console.log(yearsUntilRetirement(1981, 'David'));
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPiece(apples);
+    const orangePieces = cutFruitPiece(oranges);
+
+    const juice = `Ingredients: ${applePieces} apples and ${orangePieces} oranges.`;
+    return juice;
+}
+
+console.log(fruitProcessor(2, 3));
