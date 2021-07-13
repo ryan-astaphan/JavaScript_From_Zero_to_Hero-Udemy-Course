@@ -159,3 +159,14 @@
 // if (friends.includes('Miguel')) {
 //     console.log('You have a friend named Miguel');
 // }
+
+
+
+// LECTURE: Introduction to Objects
+const ryan = {
+    firstName: 'Ryan',
+    lastName: 'Astaphan',
+    age: 36,
+    nationality: 'American',
+    friends: ['Miguel', 'Jeff']
+};

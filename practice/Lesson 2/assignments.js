@@ -136,20 +136,32 @@
 
 
 
-// CODING CHALLENGE #2
-function calcTip(bill) {
-    if (bill >= 50 && bill <= 300) {
-        const tip = bill * 0.15;
-        return tip;
-    } else {
-        const tip = bill * 0.20;
-        return tip;
-    }
-}
+// // CODING CHALLENGE #2
+// function calcTip(bill) {
+//     if (bill >= 50 && bill <= 300) {
+//         const tip = bill * 0.15;
+//         return tip;
+//     } else {
+//         const tip = bill * 0.20;
+//         return tip;
+//     }
+// }
 
-// console.log(calcTip(400));
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-console.log(`The tips for the 3 bills are: ${tips}.`);
-const totals = [bills[0] + calcTip(bills[0]), bills[1] + calcTip(bills[1]), bills[2] + calcTip(bills[2])];
-console.log(`The total for the 3 bills are: ${totals}.`);
+// // console.log(calcTip(400));
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(`The tips for the 3 bills are: ${tips}.`);
+// const totals = [bills[0] + calcTip(bills[0]), bills[1] + calcTip(bills[1]), bills[2] + calcTip(bills[2])];
+// console.log(`The total for the 3 bills are: ${totals}.`);
+
+
+
+// LECTURE: Introduction to Objects
+const myCountry = {
+    country: 'Thailand',
+    capital: 'Bangkok',
+    language: 'Thai',
+    population: 69,
+    neighbors: ['Myanmar', 'Laos', 'Cambodia', 'Malaysia']
+};
+console.log(myCountry);
