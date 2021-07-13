@@ -18,9 +18,9 @@
 // LECTURE: Function Declarations vs Expressions
 
 // #1 Function declaration
-function percentageOfWorldPopulation(population) {
-    return (population / 7900) * 100;
-}
+// function percentageOfWorldPopulation(population) {
+//     return (population / 7900) * 100;
+// }
 
 // const thailand = percentageOfWorldPopulation(79);
 // console.log(thailand);
@@ -112,8 +112,24 @@ function percentageOfWorldPopulation(population) {
 
 
 // LECTURE: Introduction to Arrays
-const populations = [37, 99, 23, 55];
-console.log(populations.length === 4);
-const percentages = [percentageOfWorldPopulation(populations[0]), percentageOfWorldPopulation(populations[1]), percentageOfWorldPopulation(populations[2]), percentageOfWorldPopulation(populations[3])];
+// const populations = [37, 99, 23, 55];
+// console.log(populations.length === 4);
+// const percentages = [percentageOfWorldPopulation(populations[0]), percentageOfWorldPopulation(populations[1]), percentageOfWorldPopulation(populations[2]), percentageOfWorldPopulation(populations[3])];
 
-console.log(percentages);
+// console.log(percentages);
+
+
+
+// LECTURE: Basic Array Operations (Methods)
+const neighbors = ['Myanmar', 'Laos', 'Cambodia', 'Malaysia'];
+neighbors.push('Utopia');
+console.log(neighbors)
+const byeByeUtopia = neighbors.pop();
+console.log(byeByeUtopia);
+if (neighbors.includes('Germany')) {
+    console.log('Germany shares a border with your country.');
+} else {
+    console.log(`Your country probably isn't in central Europe`);
+}
+neighbors[neighbors.length - 1] = 'New Malaysia';
+console.log(neighbors);
