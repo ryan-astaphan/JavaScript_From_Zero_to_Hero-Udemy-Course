@@ -81,21 +81,21 @@
 
 
 // LECTURE: Reviewing Functions
-const calcAge = function (birthYear) {
-    return 2021 - birthYear;
-}
+// const calcAge = function (birthYear) {
+//     return 2021 - birthYear;
+// }
 
-const yearsUntilRetirement = (birthYear, firstName) => {
-    const age = calcAge(birthYear);
-    const retirement = 65 - age;
-    if (retirement > 0) {
-        console.log(`${firstName} has ${retirement} years left until retirement.`);
-        return retirement;
-    } else {
-        console.log(`${firstName} has already retired! 🥳`)
-        return -1;
-    }
-}
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//     const age = calcAge(birthYear);
+//     const retirement = 65 - age;
+//     if (retirement > 0) {
+//         console.log(`${firstName} has ${retirement} years left until retirement.`);
+//         return retirement;
+//     } else {
+//         console.log(`${firstName} has already retired! 🥳`)
+//         return -1;
+//     }
+// }
 
-console.log(yearsUntilRetirement(1985, 'Ryan'));
-console.log(yearsUntilRetirement(1950, 'Betty'));
+// console.log(yearsUntilRetirement(1985, 'Ryan'));
+// console.log(yearsUntilRetirement(1950, 'Betty'));

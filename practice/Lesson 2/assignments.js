@@ -69,3 +69,42 @@
 // const thailand = describePopulation('Thailand', 69);
 // const usa = describePopulation('America', 328);
 // const indonesia = describePopulation('Indonesia', 270);
+
+
+
+// CODING CHALLENGE #1
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+// problem #1
+const dolphinsAvg = calcAverage(44, 23, 71);
+const koalasAvg = calcAverage(65, 54, 49);
+
+function checkWinner(dolphins, koalas) {
+    if (dolphins > koalas * 2) {
+        console.log(`The Dolphins win with a score of\
+        ${dolphins} to ${koalas}.`);
+    } else if (koalas > dolphins * 2) {
+        console.log(`The Koalas win with a score of\
+        ${koalas} to ${dolphins}.`);
+    } else {
+        console.log(`Today's match leaves us without a winner.`);
+    }
+}
+
+console.log(checkWinner(dolphinsAvg, koalasAvg));
+
+// problem #2
+const dolphinsAvg2 = calcAverage(85, 54, 41);
+const koalasAvg2 = calcAverage(23, 34, 27);
+
+function checkWinner(dolphins, koalas) {
+    if (dolphins > koalas * 2) {
+        console.log(`The Dolphins win with a score of ${dolphins} to ${koalas}.`);
+    } else if (koalas > dolphins * 2) {
+        console.log(`The Koalas win with a score of ${koalas} to ${dolphins}.`);
+    } else {
+        console.log(`Today's match leaves us without a winner.`);
+    }
+}
+
+console.log(checkWinner(dolphinsAvg2, koalasAvg2));
