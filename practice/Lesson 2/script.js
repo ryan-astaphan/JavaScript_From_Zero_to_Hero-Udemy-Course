@@ -64,16 +64,38 @@
 
 
 // LECTURE: Functions Calling Other Functions
-function cutFruitPiece(fruit) {
-    return fruit * 4;
+// function cutFruitPiece(fruit) {
+//     return fruit * 4;
+// }
+
+// function fruitProcessor(apples, oranges) {
+//     const applePieces = cutFruitPiece(apples);
+//     const orangePieces = cutFruitPiece(oranges);
+
+//     const juice = `Ingredients: ${applePieces} apples and ${orangePieces} oranges.`;
+//     return juice;
+// }
+
+// console.log(fruitProcessor(2, 3));
+
+
+
+// LECTURE: Reviewing Functions
+const calcAge = function (birthYear) {
+    return 2021 - birthYear;
 }
 
-function fruitProcessor(apples, oranges) {
-    const applePieces = cutFruitPiece(apples);
-    const orangePieces = cutFruitPiece(oranges);
-
-    const juice = `Ingredients: ${applePieces} apples and ${orangePieces} oranges.`;
-    return juice;
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+    if (retirement > 0) {
+        console.log(`${firstName} has ${retirement} years left until retirement.`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired! 🥳`)
+        return -1;
+    }
 }
 
-console.log(fruitProcessor(2, 3));
+console.log(yearsUntilRetirement(1985, 'Ryan'));
+console.log(yearsUntilRetirement(1950, 'Betty'));
