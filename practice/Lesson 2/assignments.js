@@ -186,24 +186,59 @@
 
 
 // LECTURE: Object Methods
-const myCountry = {
-    country: 'Thailand',
-    capital: 'Bangkok',
-    language: 'Thai',
-    population: 69,
-    // neighbors: ['Myanmar', 'Laos', 'Cambodia', 'Malaysia'],
-    neighbors: [],
-    describe: function () {
-        console.log(`${this.country} has ${this.population} million \
-${this.language}-speaking people, ${this.neighbors.length} neighboring \
-countries and a capital city called ${this.capital}.`);
-    },
+// const myCountry = {
+//     country: 'Thailand',
+//     capital: 'Bangkok',
+//     language: 'Thai',
+//     population: 69,
+//     // neighbors: ['Myanmar', 'Laos', 'Cambodia', 'Malaysia'],
+//     neighbors: [],
+//     describe: function () {
+//         console.log(`${this.country} has ${this.population} million \
+// ${this.language}-speaking people, ${this.neighbors.length} neighboring \
+// countries and a capital city called ${this.capital}.`);
+//     },
 
-    checkIsland: function () {
-        this.isIsland = this.neighbors.length === 0 ? true : false;
+//     checkIsland: function () {
+//         this.isIsland = this.neighbors.length === 0 ? true : false;
+//     }
+// };
+
+// myCountry.describe();
+// myCountry.checkIsland();
+// console.log(myCountry);
+
+
+
+// CODING CHALLENGE #3
+const mark = {
+    weight: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        this.BMI = this.weight / (this.height ** 2);
+        return this.BMI;
     }
 };
 
-myCountry.describe();
-myCountry.checkIsland();
-console.log(myCountry);
+const john = {
+    weight: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        this.BMI = this.weight / (this.height ** 2);
+        return this.BMI;
+    }
+};
+
+console.log(john.calcBMI());
+console.log(mark.calcBMI());
+
+
+if (mark.BMI > john.BMI) {
+    console.log(`Mark's BMI (${mark.BMI}) is higher than John's BMI (${john.BMI}).`);
+} else if (mark.BMI < john.BMI) {
+    console.log(`Mark's BMI (${mark.BMI}) is lower than John's BMI (${john.BMI}).`);
+} else {
+    console.log(`Mark and John have the same BMI (${mark.BMI}).`);
+};

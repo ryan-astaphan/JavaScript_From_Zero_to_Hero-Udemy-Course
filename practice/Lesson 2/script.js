@@ -205,39 +205,40 @@
 
 
 // LECTURE: Object Methods
-const ryan = {
-    firstName: 'Ryan',
-    lastName: 'Astaphan',
-    birthYear: 1985,
-    nationality: 'American',
-    friends: ['Miguel', 'Jeff'],
-    isProfessionalSoccerPlayer: true,
+// const ryan = {
+//     firstName: 'Ryan',
+//     lastName: 'Astaphan',
+//     birthYear: 1985,
+//     nationality: 'American',
+//     friends: ['Miguel', 'Jeff'],
+//     isProfessionalSoccerPlayer: true,
 
-    // calcAge: function (birthYear) { // function EXPRESSIONS can exist within objects
-    //     return 2021 - birthYear; // function Declarations CANNOT 
-    // }
+// calcAge: function (birthYear) { // function EXPRESSIONS can exist within objects
+//     return 2021 - birthYear; // function Declarations CANNOT 
+// }
 
-    //     calcAge: function () { // function EXPRESSIONS can exist within objects
-    //         return 2021 - this.birthYear; // function Declarations CANNOT 
-    //     }
-    // };
+//     calcAge: function () { // function EXPRESSIONS can exist within objects
+//         return 2021 - this.birthYear; // function Declarations CANNOT 
+//     }
+// };
 
-    calcAge: function () {
-        this.age = 2021 - this.birthYear;
-        return this.age;
-    },
-    // Challenge
-    // Ryan is a 36-year old American professional soccer player.
-    getSummary: function () {
-        return `${this.firstName} is a ${this.calcAge()}-year old ${this.nationality} \
-and he ${this.isProfessionalSoccerPlayer ? 'is' : 'is not'} a professional soccer player.`
-    }
-};
+// calcAge: function () {
+//     this.age = 2021 - this.birthYear;
+//     return this.age;
+// },
+// Challenge
+// Ryan is a 36-year old American professional soccer player.
+// getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${this.nationality} \
+// and he ${this.isProfessionalSoccerPlayer ? 'is' : 'is not'} a professional soccer player.`;
+// };
 
 // console.log(ryan.calcAge());
 // console.log(ryan['calcAge']());
 // console.log(ryan.calcAge(ryan.birthYear));
-console.log(ryan.calcAge());
-console.log(ryan.age);
-console.log(ryan.getSummary());
+// console.log(ryan.calcAge());
+// console.log(ryan.age);
+// console.log(ryan.getSummary());
+
+
 
