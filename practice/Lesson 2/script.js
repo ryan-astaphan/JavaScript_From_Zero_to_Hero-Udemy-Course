@@ -99,3 +99,34 @@
 
 // console.log(yearsUntilRetirement(1985, 'Ryan'));
 // console.log(yearsUntilRetirement(1950, 'Betty'));
+
+
+
+// LECTURE: Arrays
+const friends = ['Miguel', 'Jeff', 'Jose'];
+console.log(friends);
+console.log(friends[0]); // array indexing
+
+const years = new Array(1991, 1994, 1997, 2001);
+console.log(years);
+console.log(years.length); // array length method
+console.log(years[years.length - 1]); // negative index using length method
+
+years[0] = 1992 // replacing values at a specific index is allowed
+console.log(years);
+
+const firstName = 'Ryan';
+const ryan = [firstName, 'Asta', 2021 - 1985];
+console.log(ryan);
+
+function calcAge(birthYear) {
+    return 2021 - birthYear;
+}
+const years2 = [1990, 1969, 1975, 1989];
+const age1 = calcAge(years2[0]);
+const age2 = calcAge(years2[1]);
+const age3 = calcAge(years2[years2.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years2[0]), calcAge(years2[1]), calcAge(years2[years2.length - 1])];
+console.log(ages);
