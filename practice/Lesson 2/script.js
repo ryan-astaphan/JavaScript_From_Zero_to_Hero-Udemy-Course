@@ -134,28 +134,28 @@
 
 
 // LECTURE: Basic Array Operations (Methods)
-const friends = ['Miguel', 'Jeff', 'Jose'];
+// const friends = ['Miguel', 'Jeff', 'Jose'];
 // Adds elements
-const newLength = friends.push('Marco'); // adds element to the end of the array
-console.log(newLength);
-console.log(friends);
+// const newLength = friends.push('Marco'); // adds element to the end of the array
+// console.log(newLength);
+// console.log(friends);
 
-friends.unshift('Ei'); // adds an element to the front of the array
-console.log(friends);
+// friends.unshift('Ei'); // adds an element to the front of the array
+// console.log(friends);
 
 // Removes elements
-const popped = friends.pop(); // removes last element
-console.log(popped);
-console.log(friends);
+// const popped = friends.pop(); // removes last element
+// console.log(popped);
+// console.log(friends);
 
-const shifted = friends.shift(); // removes first element
-console.log(shifted);
-console.log(friends);
+// const shifted = friends.shift(); // removes first element
+// console.log(shifted);
+// console.log(friends);
 
-// Searches for inclusion of element in array
-console.log(friends.includes('Miguel'));
-console.log(friends.includes('Jay'));
+// // Searches for inclusion of element in array
+// console.log(friends.includes('Miguel'));
+// console.log(friends.includes('Jay'));
 
-if (friends.includes('Miguel')) {
-    console.log('You have a friend named Miguel');
-}
+// if (friends.includes('Miguel')) {
+//     console.log('You have a friend named Miguel');
+// }

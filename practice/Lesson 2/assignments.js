@@ -121,15 +121,35 @@
 
 
 // LECTURE: Basic Array Operations (Methods)
-const neighbors = ['Myanmar', 'Laos', 'Cambodia', 'Malaysia'];
-neighbors.push('Utopia');
-console.log(neighbors)
-const byeByeUtopia = neighbors.pop();
-console.log(byeByeUtopia);
-if (neighbors.includes('Germany')) {
-    console.log('Germany shares a border with your country.');
-} else {
-    console.log(`Your country probably isn't in central Europe`);
+// const neighbors = ['Myanmar', 'Laos', 'Cambodia', 'Malaysia'];
+// neighbors.push('Utopia');
+// console.log(neighbors)
+// const byeByeUtopia = neighbors.pop();
+// console.log(byeByeUtopia);
+// if (neighbors.includes('Germany')) {
+//     console.log('Germany shares a border with your country.');
+// } else {
+//     console.log(`Your country probably isn't in central Europe`);
+// }
+// neighbors[neighbors.length - 1] = 'New Malaysia';
+// console.log(neighbors);
+
+
+
+// CODING CHALLENGE #2
+function calcTip(bill) {
+    if (bill >= 50 && bill <= 300) {
+        const tip = bill * 0.15;
+        return tip;
+    } else {
+        const tip = bill * 0.20;
+        return tip;
+    }
 }
-neighbors[neighbors.length - 1] = 'New Malaysia';
-console.log(neighbors);
+
+// console.log(calcTip(400));
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(`The tips for the 3 bills are: ${tips}.`);
+const totals = [bills[0] + calcTip(bills[0]), bills[1] + calcTip(bills[1]), bills[2] + calcTip(bills[2])];
+console.log(`The total for the 3 bills are: ${totals}.`);
