@@ -253,9 +253,24 @@ function percentageOfWorldPopulation(population) {
 
 
 // LECTURE: Looping Arrays, Breaking and Continuing
-const populations = [37, 99, 23, 55];
-const percentages2 = [];
-for (let i = 0; i < populations.length; i++) {
-    percentages2.push(percentageOfWorldPopulation(populations[i]));
+// const populations = [37, 99, 23, 55];
+// const percentages2 = [];
+// for (let i = 0; i < populations.length; i++) {
+//     percentages2.push(percentageOfWorldPopulation(populations[i]));
+// }
+// console.log(percentages2);
+
+
+
+// LECTURE: Looping Backwards & Loops in Loops
+const listOfNeighbors = [
+    ['Canada', 'Mexico'],
+    ['Spain'],
+    ['Norway', 'Sweden', 'Russia']
+];
+
+for (let i = 0; i < listOfNeighbors.length; i++) {
+    for (let n = 0; n < listOfNeighbors[i].length; n++) {
+        console.log(`Neighbor: ${listOfNeighbors[i][n]}`);
+    }
 }
-console.log(percentages2);
