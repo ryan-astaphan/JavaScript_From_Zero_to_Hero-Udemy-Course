@@ -211,34 +211,41 @@
 
 
 // CODING CHALLENGE #3
-const mark = {
-    weight: 78,
-    height: 1.69,
+// const mark = {
+//     weight: 78,
+//     height: 1.69,
 
-    calcBMI: function () {
-        this.BMI = this.weight / (this.height ** 2);
-        return this.BMI;
-    }
-};
+//     calcBMI: function () {
+//         this.BMI = this.weight / (this.height ** 2);
+//         return this.BMI;
+//     }
+// };
 
-const john = {
-    weight: 92,
-    height: 1.95,
+// const john = {
+//     weight: 92,
+//     height: 1.95,
 
-    calcBMI: function () {
-        this.BMI = this.weight / (this.height ** 2);
-        return this.BMI;
-    }
-};
+//     calcBMI: function () {
+//         this.BMI = this.weight / (this.height ** 2);
+//         return this.BMI;
+//     }
+// };
 
-console.log(john.calcBMI());
-console.log(mark.calcBMI());
+// console.log(john.calcBMI());
+// console.log(mark.calcBMI());
 
 
-if (mark.BMI > john.BMI) {
-    console.log(`Mark's BMI (${mark.BMI}) is higher than John's BMI (${john.BMI}).`);
-} else if (mark.BMI < john.BMI) {
-    console.log(`Mark's BMI (${mark.BMI}) is lower than John's BMI (${john.BMI}).`);
-} else {
-    console.log(`Mark and John have the same BMI (${mark.BMI}).`);
-};
+// if (mark.BMI > john.BMI) {
+//     console.log(`Mark's BMI (${mark.BMI}) is higher than John's BMI (${john.BMI}).`);
+// } else if (mark.BMI < john.BMI) {
+//     console.log(`Mark's BMI (${mark.BMI}) is lower than John's BMI (${john.BMI}).`);
+// } else {
+//     console.log(`Mark and John have the same BMI (${mark.BMI}).`);
+// };
+
+
+
+// LECTURE: Iteration: The For Loop
+for (let rep = 1; rep <= 50; rep++) {
+    console.log(`Voter #${rep} is currently voting.`);
+}

@@ -242,3 +242,8 @@
 
 
 
+// LECTURE: Iteration: The For Loop
+// initialize the counter; set the condition; increase the counter by 1 on each iteration
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights: rep #${rep}!`);
+}
