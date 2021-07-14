@@ -278,12 +278,62 @@ function percentageOfWorldPopulation(population) {
 
 
 // LECTURE: The While Loop
-const populations = [37, 99, 23, 55];
-const percentages = [];
+// const populations = [37, 99, 23, 55];
+// const percentages = [];
+// let i = 0;
+// while (i < populations.length) {
+//     percentages.push((populations[i] / 7900) * 100);
+//     i++;
+// }
+
+// console.log(percentages);
+
+
+
+//  CODING CHALLENGE #4
+function calcTip(bill) {
+    if (bill >= 50 && bill <= 300) {
+        const tip = bill * 0.15;
+        return tip;
+    } else {
+        const tip = bill * 0.20;
+        return tip;
+    }
+}
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
 let i = 0;
-while (i < populations.length) {
-    percentages.push((populations[i] / 7900) * 100);
+
+while (i < bills.length) {
+    tips.push(calcTip(bills[i]));
+    totals.push(tips[i] + bills[i]);
     i++;
 }
 
-console.log(percentages);
+console.log(totals);
+
+// Bonus Challenge
+
+// function calcAverage(arr) {
+//     let sum = 0;
+//     let iter = 0;
+//     while (iter < arr.length) {
+//         sum += arr[iter];
+//         iter++;
+//     }
+//     const average = (sum / sum.length);
+//     return average;
+// }
+function calcAverage(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    const avg = sum / arr.length;
+    return avg
+}
+
+console.log(calcAverage(tips));
+console.log(calcAverage(totals));
