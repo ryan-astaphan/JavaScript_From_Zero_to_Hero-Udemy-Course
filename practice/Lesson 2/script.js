@@ -244,6 +244,52 @@
 
 // LECTURE: Iteration: The For Loop
 // initialize the counter; set the condition; increase the counter by 1 on each iteration
-for (let rep = 1; rep <= 10; rep++) {
-    console.log(`Lifting weights: rep #${rep}!`);
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights: rep #${rep}!`);
+// }
+
+
+
+// LECTURE: Looping Arrays, Breaking and Continuing
+const ryan = [
+    'Ryan',
+    'Astaphan',
+    36,
+    'American',
+    ['Miguel', 'Jeff'],
+    true
+];
+
+const types = [];
+
+
+for (let i = 0; i < ryan.length; i++) {
+    // Reading from array 'ryan'
+    console.log(ryan[i], typeof ryan[i]);
+
+    // Filling an array 'types'
+    // types[i] = typeof ryan[i];  // 1 way to do it.
+    types.push(typeof ryan[i]);
+}
+
+console.log(types);
+
+
+const years = [1990, 2005, 1675, 2001];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+    ages.push(2021 - years[i]);
+}
+console.log(ages);
+
+
+// continue and break
+for (let i = 0; i < ryan.length; i++) {
+    if (typeof ryan[i] !== 'string') continue;
+    console.log(ryan[i]);
+}
+
+for (let i = 0; i < ryan.length; i++) {
+    if (typeof ryan[i] === 'number') break;
+    console.log(ryan[i]);
 }

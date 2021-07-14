@@ -18,9 +18,9 @@
 // LECTURE: Function Declarations vs Expressions
 
 // #1 Function declaration
-// function percentageOfWorldPopulation(population) {
-//     return (population / 7900) * 100;
-// }
+function percentageOfWorldPopulation(population) {
+    return (population / 7900) * 100;
+}
 
 // const thailand = percentageOfWorldPopulation(79);
 // console.log(thailand);
@@ -246,6 +246,16 @@
 
 
 // LECTURE: Iteration: The For Loop
-for (let rep = 1; rep <= 50; rep++) {
-    console.log(`Voter #${rep} is currently voting.`);
+// for (let rep = 1; rep <= 50; rep++) {
+//     console.log(`Voter #${rep} is currently voting.`);
+// }
+
+
+
+// LECTURE: Looping Arrays, Breaking and Continuing
+const populations = [37, 99, 23, 55];
+const percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+    percentages2.push(percentageOfWorldPopulation(populations[i]));
 }
+console.log(percentages2);
