@@ -263,14 +263,27 @@ function percentageOfWorldPopulation(population) {
 
 
 // LECTURE: Looping Backwards & Loops in Loops
-const listOfNeighbors = [
-    ['Canada', 'Mexico'],
-    ['Spain'],
-    ['Norway', 'Sweden', 'Russia']
-];
+// const listOfNeighbors = [
+//     ['Canada', 'Mexico'],
+//     ['Spain'],
+//     ['Norway', 'Sweden', 'Russia']
+// ];
 
-for (let i = 0; i < listOfNeighbors.length; i++) {
-    for (let n = 0; n < listOfNeighbors[i].length; n++) {
-        console.log(`Neighbor: ${listOfNeighbors[i][n]}`);
-    }
+// for (let i = 0; i < listOfNeighbors.length; i++) {
+//     for (let n = 0; n < listOfNeighbors[i].length; n++) {
+//         console.log(`Neighbor: ${listOfNeighbors[i][n]}`);
+//     }
+// }
+
+
+
+// LECTURE: The While Loop
+const populations = [37, 99, 23, 55];
+const percentages = [];
+let i = 0;
+while (i < populations.length) {
+    percentages.push((populations[i] / 7900) * 100);
+    i++;
 }
+
+console.log(percentages);

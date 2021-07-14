@@ -298,26 +298,43 @@
 
 // LECTURE: Looping Backwards & Loops in Loops
 // Looping Backwards
-const ryan = [
-    'Ryan',
-    'Astaphan',
-    36,
-    'American',
-    ['Miguel', 'Jeff'],
-];
+// const ryan = [
+//     'Ryan',
+//     'Astaphan',
+//     36,
+//     'American',
+//     ['Miguel', 'Jeff'],
+// ];
 
-const ryanBackwards = [];
+// const ryanBackwards = [];
 
-for (let i = ryan.length - 1; i >= 0; i--) {
-    ryanBackwards.push(ryan[i]);
+// for (let i = ryan.length - 1; i >= 0; i--) {
+//     ryanBackwards.push(ryan[i]);
+// }
+// console.log(ryanBackwards);
+
+// // Loop in a loop
+// const exercises = ['Bench Press', 'Squat', 'Deadlift'];
+
+// for (let i = 0; i < exercises.length; i++) {
+//     for (let n = 1; n <= 10; n++) {
+//         console.log(`${exercises[i]}: Rep #${n} 🏋️‍♂️`);
+//     }
+// }
+
+
+
+// LECTURE: The While Loop
+let rep = 1;
+while (rep <= 100) {
+    console.log(`Lifting weights!!! Rep #${rep}`);
+    rep++;
 }
-console.log(ryanBackwards);
 
-// Loop in a loop
-const exercises = ['Bench Press', 'Squat', 'Deadlift'];
 
-for (let i = 0; i < exercises.length; i++) {
-    for (let n = 1; n <= 10; n++) {
-        console.log(`${exercises[i]}: Rep #${n} 🏋️‍♂️`);
-    }
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) { console.log('The loop is over') };
 }
