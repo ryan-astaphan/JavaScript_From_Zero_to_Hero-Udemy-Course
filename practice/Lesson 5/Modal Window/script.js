@@ -18,5 +18,11 @@ for (let i = 0; i < btnsOpenModal.length; i++)
   btnsOpenModal[i].addEventListener('click', showModal);
 
 btnCloseModal.addEventListener('click', hideModal);
-
 overlay.addEventListener('click', hideModal);
+
+// -  the parameter 'e' stands for event
+// -  we are going to have to access the object that is created
+// -- when the EventListener is triggered
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) hideModal();
+});
