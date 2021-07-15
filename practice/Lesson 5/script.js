@@ -61,12 +61,15 @@ document.querySelector('.check').addEventListener('click', function () {
     // When player wins
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 CORRECT!';
-
     document.querySelector('.number').textContent = secretNumber;
-
     document.querySelector('body').style.backgroundColor = '#60b347';
-
     document.querySelector('.number').style.width = '30rem';
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector(
+        '.label-highscore'
+      ).textContent = `🥇 Highscore: ${highScore}`;
+    }
   }
   // When guess is too high
   else if (guess > secretNumber) {
@@ -92,7 +95,9 @@ document.querySelector('.check').addEventListener('click', function () {
     }
   }
 });
-
+// ------------
+// ------------
+// ------------
 // CODING CHALLENGE #1
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
@@ -104,3 +109,7 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
 });
+// ------------
+// ------------
+// ------------
+// LECTURE: High Score Implemenation
