@@ -34,7 +34,7 @@
 // console.log(typeof null);
 
 // let, const & var
-// 1) let is good for assigning a blank variable or for when you plan 
+// 1) let is good for assigning a blank variable or for when you plan
 // to reassign the variable
 // 2) const variables cannot change and cannot be assigned to blank values
 // - const stands for constant
@@ -63,9 +63,8 @@
 // console.log(5 < 3);
 // console.log(37 - 15 < 99 - 10);
 
-// Operator precedence 
+// Operator precedence
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
-
 
 // Strings and template literals
 // const firstName = 'Ryan';
@@ -114,13 +113,12 @@
 // to a number type. It is not reassigning a number value to our value, as seen below
 // console.log(yearOfBirth + 18);  // the output here will be the original string value '1985'
 
-
 // console.log(Number('Ryan')); // this will log as 'NaN'
 // console.log(typeof Nan); // the type for NaN is undefined
 
 // console.log(String(23), 23); // the first 23 will return as a string, the 2nd as a number
 
-// type coercions 
+// type coercions
 // console.log('I am ' + 36 + ' years old.'); //This is type coersion, 36 is converted to a string due to the plus symbol
 // console.log('23' - '10' - 3); // Output is the number 10. The minus sign converts the strings to numbers
 // console.log('22' * '2'); // Output is 44. The multiplication sign converts the strings to numbers
@@ -133,10 +131,9 @@
 
 // console.log(2 + 3 + 4 + '5'); //Output will be '95'... 2+3+4 = 9 ... 9 + '5' = string concatenation
 
-
 // TRUTHY and FALSY Values
 // 5 falsy values: 0, '', undefined, null, NaN
-// everything else is truthy 
+// everything else is truthy
 // console.log(Boolean(0));
 // console.log(Boolean(undefined));
 // console.log(Boolean(''));
@@ -159,12 +156,11 @@
 //     console.log('I am lost for words.');
 // }
 
-
-// EQUALITY OPERATORS: == vs === 
+// EQUALITY OPERATORS: == vs ===
 // LOOSE equality vs STRICT equality
-// The difference between == and === is that: == converts the variable values 
-// to the same type before performing comparison. This is called type coercion. 
-// === does not do any type conversion (coercion) and returns true only 
+// The difference between == and === is that: == converts the variable values
+// to the same type before performing comparison. This is called type coercion.
+// === does not do any type conversion (coercion) and returns true only
 // if both values and types are identical for the two variables being compared.
 
 // console.log('18' == 18); // outputs as true due to type coercion
@@ -188,7 +184,6 @@
 
 // LOOSE and STRICT INEQUALITY Operators: != and !==
 // Best practice is to use the strict version.
-
 
 // LOGICAL OPERATORS
 // const hasDriversLicense = true;
@@ -214,7 +209,6 @@
 // } else {
 //     console.log("Don't drive.");
 // }
-
 
 // SWITCH STATEMENT
 // const day = 'tuesday';
@@ -257,7 +251,6 @@
 //     console.log(`That's not a valid day.`);
 // }
 
-
 // LECTURE: Conditional operator (Ternary Operator)
 // const age = 36;
 // age >= 18 ? console.log('I like to drink 🍷') :
@@ -279,3 +272,8 @@
 // console.log(`I like to drink ${drink}`); // here we use a variable that equals a ternary operator
 // or with the full ternary operator:
 // console.log(`I like to drink ${age2 >= 18 ? 'wine 🍷' : 'water 💧'}`);
+
+const x = "23";
+if (x === 23) console.log(23);
+
+console.log();
