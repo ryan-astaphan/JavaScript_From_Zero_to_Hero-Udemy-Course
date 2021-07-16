@@ -1,0 +1,32 @@
+HOW IS JS CODE EXECUTED?
+
+Let's assume the code just finished compiling.
+- A GLOBAL EXECUTION CONTEXT (for top-level code) is created
+--top-level code is code not within a function
+--Execution Context:
+---Environment in which a piece of JS is executed. Stores all 
+---the necessary info for some code to be executed.
+--There is ONLY 1 GLOBAL Execution Context (EC) 
+---This is the default context. It is created for code that is 
+---not inside any function (aka top-level code)
+
+- Top-level code, aka code within the global EC, is executed.
+
+- Next, functions start getting executed.
+--For each function, one execution context is created.
+
+- The global execution context, along with all function contexts,
+--makes up the CALL STACK
+
+WHAT'S INSIDE THE EXECUTION CONTEXT?
+1) Variable Environment
+- let, const and var declarations
+- functions
+- arguments object
+
+2) Scope Chain
+
+3) 'this' keyword
+
+* all of the above is generated during the "creation phase", right before execution.
+** ARROW FUNTIONS DO NOT get their own Arguments object or 'this' keyword
