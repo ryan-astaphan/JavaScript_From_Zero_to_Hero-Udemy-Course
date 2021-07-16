@@ -1,0 +1,38 @@
+THE JAVASCRIPT ENGINE AND RUNTIME
+    - A JavaScript Engine is a program that executes JS code.
+    - Google's V8 Engine is a popular JS Engine. It powers Chrome 
+    and Node.js.
+    - All JS Engine's contain a CALL STACK & a HEAP.
+    --A call stack is where our code is executed.
+    --A Heap is where objects are stored.
+    
+    COMPILATION vs INTERPRETATION
+    - Compilation: Entire code is converted into machine code at once, and
+    --written to a binary file that can be executed by a computer.
+
+    - Intepretation: Intepreter runs through the source code and executes it 
+    --line by line.
+
+    - Interpretation is too slow and offers poor performance.
+
+    - JavaScript uses Just-in-time (JIT) compilation: 
+    --Entire code is converted into machine code at once, then executed immediately.
+    - It is fast.
+
+// The JIT Compilation of JavaScript
+    - When JS code enters the engine, it is PARSED.
+    --The code is parsed into AST (Abstract Syntax Tree).
+    --The parsing breaks down and organizes all the code.
+    --The parsing checks for syntax errors.
+    - The AST is then COMPILED (JIT compilation) into machine code.
+    - The machine code then gets executed immediately within the call stack.
+    - Once the code is executed, it is then optimized, re-compiled, and re-executed.
+    --This allows the code to run quickly.
+
+// JavaScript Runtime
+RUNTIME IN THE BROWSER
+- Within the browser there is the JS Engine, Web APIs and a Callback Queue
+- Callback Queue
+--When the JS Engine's call stack is empty, a triggered event or callback function
+--will enter the call stack and be executed.
+--This is called the EVENT LOOP
