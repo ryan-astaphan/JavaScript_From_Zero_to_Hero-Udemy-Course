@@ -106,3 +106,71 @@
 // - this is NOT static. It depends on how the function is called, and its
 // --value its value is only assigned when the function is actually called.
 // * arrow functions DO NOT get the 'this' keyword
+//
+//
+//
+// LECTURE: The 'this' Keyword in Practice
+// console.log(this); // this references the global 'window' object
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAge(1991);
+
+// var firstName = 'Ryan'
+
+// const jonas = {
+//     firstName = 'Jonas',
+//     year: 1991,
+//     calcAge: function () {
+//         console.log(this);
+//         console.log(2037 - this.year);
+//     }
+//     greet: () => console.log(`Hey ${this.firstName}`);
+// }
+
+// jonas.greet();
+// console.log(this.firstName);
+
+//
+//
+//
+
+// LECTURE: Primitives vs Objects
+// aka primitive types vs reference types
+// 1) Primitive types are stored in the call stack
+// 2) Reference types are stored in the heap.
+// - Their variable exists in the call stack and that variable's value points to
+// --a memory address in the heap.
+// *Setting one object variable to another object variable will not create a deep copy
+// *-So if the values of one variable are changed, the same will old tru for the other
+// *--variable because both are pointing to the same memory address.
+
+// primitive types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+// reference types
+const jessica = {
+  f: 'Jess',
+  l: 'Will',
+  age: 27,
+};
+
+const marriedJessica = jessica;
+marriedJessica.l = 'Davis';
+console.log('Before marriage:', jessica);
+console.log('After marriage:', marriedJessica);
+
+// copying objects
+// 1) Shallow copy
+// --if the object we are copying has another object within in (such as an array),
+// then a copy of the inner object will not be copied. Instead both variables will
+// share the same inner object. *The outer layer of the object will be a unique
+// copy though.
+const jessicaCopy = Object.assign({}, jessica);
+jessicaCopy.l = 'Roberts';
+console.log('Before marriage:', jessica);
+console.log('After marriage:', jessicaCopy);
