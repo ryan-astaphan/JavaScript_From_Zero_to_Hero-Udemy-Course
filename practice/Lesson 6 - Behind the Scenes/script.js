@@ -73,26 +73,36 @@
 // FUNCTIONS:
 //
 //
-console.log(addDeclaration(2, 3)); // function declaration
-console.log(addExpr(2, 3)); // function expression - this will not work
-console.log(addArrow(2, 3)); // arrow expression - this will not work
+// console.log(addDeclaration(2, 3)); // function declaration
+// console.log(addExpr(2, 3)); // function expression - this will not work
+// console.log(addArrow(2, 3)); // arrow expression - this will not work
 
-function addDeclaration(a, b) {
-  return a + b;
-}
+// function addDeclaration(a, b) {
+//   return a + b;
+// }
 
-const addExpr = function (a, b) {
-  return a + b;
-};
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
 
-var addArrow = (a, b) => a + b;
+// var addArrow = (a, b) => a + b;
 
-// Example
-if (!numProducts) deleteShoppingCart();
-// due to hoisting, numProducts can be initialized above because it is a var variable,
-// but numProducts will be of value 'undefined', so all products will get deleted :(
-var numProducts = 10;
+// // Example
+// if (!numProducts) deleteShoppingCart();
+// // due to hoisting, numProducts can be initialized above because it is a var variable,
+// // but numProducts will be of value 'undefined', so all products will get deleted :(
+// var numProducts = 10;
 
-function deleteShoppingCart() {
-  console.log('All products deleted!');
-}
+// function deleteShoppingCart() {
+//   console.log('All products deleted!');
+// }
+//
+//
+//
+// LECTURE: The 'this' Keyword
+// - this KEYWORD/VARIABLE: Special variable that is created for every execution
+// --context (every function). Takes the value of (points to) the "owner" of the
+// --function in which 'this' keyword is used.
+// - this is NOT static. It depends on how the function is called, and its
+// --value its value is only assigned when the function is actually called.
+// * arrow functions DO NOT get the 'this' keyword
