@@ -1,12 +1,15 @@
 'use strict';
 
-// Data needed for a later exercise
-// const flights =
-//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+// // Data needed for a later exercise
+// // const flights =
+// //   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+// //
+// //
+// LESSON: Destructuring Arrays
 // Data needed for first part of the section
 const restaurant = {
-  name: 'Classico Italiano',
+  nameRest: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
@@ -16,60 +19,115 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  // openingHours: {
-  //   thu: {
-  //     open: 12,
-  //     close: 22,
-  //   },
-  //   fri: {
-  //     open: 11,
-  //     close: 23,
-  //   },
-  //   sat: {
-  //     open: 0, // Open 24 hours
-  //     close: 24,
-  //   },
-  // },
+  orderDelivery: function ({ starterIndex, mainIndex, address, time }) {
+    console.log(
+      `Ordered received! ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]} \
+will be delivered to ${address} at ${time}.`
+    );
+  },
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
 };
 
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
-// destructuring arrays
-const [x, y, z] = arr;
-console.log(x, y, z);
+// // destructuring arrays
+// const [x, y, z] = arr;
+// console.log(x, y, z);
 
-// destructuring arrays
-let [main, , secondary] = restaurant.categories;
-console.log(main, secondary);
-
-// switching variables
-// const temp = main;
-// main = secondary;
-// secondary = temp;
+// // destructuring arrays
+// let [main, , secondary] = restaurant.categories;
 // console.log(main, secondary);
 
-// switching variables with destructuring
-[main, secondary] = [secondary, main];
-console.log(main, secondary);
+// // switching variables
+// // const temp = main;
+// // main = secondary;
+// // secondary = temp;
+// // console.log(main, secondary);
 
-// Receive 2 return values from a function
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
+// // switching variables with destructuring
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
 
-// Nested array
-const nested = [2, 4, [5, 6]];
-const [e, , f] = nested; // here 'f' will return the nested array as a whole
-console.log(e, f);
-// destructuring within destructuing
-const [i, , [j, k]] = nested; // here 'j' and 'k' will return the individual values within the nested array
-console.log(i, j, k);
+// // Receive 2 return values from a function
+// const [starter, mainCourse] = restaurant.order(2, 0);
+// console.log(starter, mainCourse);
 
-// Default values
-const [p, q, r] = [8, 9];
-console.log(p, q, r); // this will return 8, 9, undefined
-// ^ because we are assigning 3 variables to an array that only has 2 values
-const [s = 1, t = 1, u = 1] = [8, 9]; // default values set to 1
-console.log(s, t, u); // with default values set, u will = 1
+// // Nested array
+// const nested = [2, 4, [5, 6]];
+// const [e, , f] = nested; // here 'f' will return the nested array as a whole
+// console.log(e, f);
+// // destructuring within destructuing
+// const [i, , [j, k]] = nested; // here 'j' and 'k' will return the individual values within the nested array
+// console.log(i, j, k);
+
+// // Default values
+// const [p, q, r] = [8, 9];
+// console.log(p, q, r); // this will return 8, 9, undefined
+// // ^ because we are assigning 3 variables to an array that only has 2 values
+// const [s = 1, t = 1, u = 1] = [8, 9]; // default values set to 1
+// console.log(s, t, u); // with default values set, u will = 1
+
+//
+//
+//
+
+// LESSON: Destructuring Objects
+// destructuring an object
+const { nameRest, openingHours, categories } = restaurant;
+console.log(nameRest, openingHours, categories);
+
+// re-naming the variables within the object
+const {
+  nameRest: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// setting default values (plus changing one variable name)
+const {
+  menu = ['Pepperoni', 'Meatball and Mushroom'],
+  starterMenu: starters = [],
+} = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj); // by wrapping the entire line of code in parentheses,
+// ^^ it allows us to mutate the variables. Without the parentheses this wouldn't work.
+console.log(a, b);
+
+// Nested objects
+let { fri } = openingHours;
+console.log(fri);
+({
+  fri: { open, close }, // ^^ this line destructures the nested object
+} = openingHours);
+console.log(open, close);
+
+// ---
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
