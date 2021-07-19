@@ -95,50 +95,72 @@
 // *  Callback functions are very important because they allow for ABSTRACTION
 // ** Abstraction basically lets us create very specialized functions, instead
 //    of really complex functions
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
+
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(' ');
+//   return [first.toUpperCase(), ...others].join(' ');
+// };
+
+// // Higher-order function
+// const transformer = function (str, fn) {
+//   console.log(`Original string: ${str}`);
+//   console.log(`Transformed string: ${fn(str)}`);
+
+//   console.log(`Transformed by: ${fn.name}`);
+// };
+
+// transformer('Javascript is the best!', upperFirstWord);
+// transformer('Javascript is the best!', oneWord);
+
+// // another example of a call-back function
+// const high5 = function () {
+//   console.log('👋');
+// };
+
+// document.body.addEventListener('click', high5);
+
+// // My own higher-order example
+// const strLength = function (name) {
+//   return name.length;
+// };
+// // console.log(strLength('ryan'));
+
+// const names = ['Ryan', 'Ahm', 'Ei', 'Brahim'];
+
+// const longestName = function (arr, fn) {
+//   const lengths = [];
+//   for (const n of names) {
+//     lengths.push(fn(n));
+//   }
+//   const highest = Math.max(...lengths);
+//   const findIndex = lengths.indexOf(highest);
+//   return `${arr[findIndex]} has the longest name in the family, with his \
+// name being ${highest} letters long.`;
+// };
+
+// console.log(longestName(names, strLength));
+
+//
+//
+//
+
+// LESSON: Functions Returning Functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
 };
+// below we set a variable that is essentially equal to the retured function
+const greetingPhrase = greet('Hey');
+// we can then call that variable with the person's name
+greetingPhrase('Ei');
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
-};
+// we can even call both functions all in 1 go:
+greet("What's up")('Ahm');
 
-// Higher-order function
-const transformer = function (str, fn) {
-  console.log(`Original string: ${str}`);
-  console.log(`Transformed string: ${fn(str)}`);
-
-  console.log(`Transformed by: ${fn.name}`);
-};
-
-transformer('Javascript is the best!', upperFirstWord);
-transformer('Javascript is the best!', oneWord);
-
-// another example of a call-back function
-const high5 = function () {
-  console.log('👋');
-};
-
-document.body.addEventListener('click', high5);
-
-// My own higher-order example
-const strLength = function (name) {
-  return name.length;
-};
-// console.log(strLength('ryan'));
-
-const names = ['Ryan', 'Ahm', 'Ei', 'Brahim'];
-
-const longestName = function (arr, fn) {
-  const lengths = [];
-  for (const n of names) {
-    lengths.push(fn(n));
-  }
-  const highest = Math.max(...lengths);
-  const findIndex = lengths.indexOf(highest);
-  return `${arr[findIndex]} has the longest name in the family, with his \
-name being ${highest} letters long.`;
-};
-
-console.log(longestName(names, strLength));
+// The above functions can be re-written as arrow functions
+const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
+greetArrow('Sawatdee khrap')('Wooteepat');
