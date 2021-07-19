@@ -169,46 +169,104 @@
 //
 //
 
-// LESSON: Closures
-// * A function always has access to the variable environment (VE)
-//   of the execution context in which it was created
-//
-// * CLOSURE: closure is the VE attached to the function,
-//     exactly as it was at the time and place when the function was created.
-//
-// * Closure has the highest-most priority within the scope chain
+// // LESSON: Closures
+// // * A function always has access to the variable environment (VE)
+// //   of the execution context in which it was created
+// //
+// // * CLOSURE: closure is the VE attached to the function,
+// //     exactly as it was at the time and place when the function was created.
+// //
+// // * Closure has the highest-most priority within the scope chain
 
-// MORE CLOSURE DEFINTIONS:
-// 1) A closure is the closed-over variable environment (VE) of the
-//   execution context (EC)in which a function was created,
-//   even after when the execution gone is gone.
-// 2) A closure gives a function access to all the variables of its
-//   parent function, even after that parent function has returned.
-//   The function keeps a reference to its outer scope, which
-//   preservers the scope chain throughout time.
-// 3) A closure makes sure that a function doesn't lose connection
-//   to the variables that existed at the time & place of the function's birth.
-// 4) A closure is like a backpack that a function carries around wherever
-//  it goes. This backpack has all the variables that were present in
-//  the environment where the function was created.
-const secureBooking = function () {
-  let passengerCount = 0;
+// // MORE CLOSURE DEFINTIONS:
+// // 1) A closure is the closed-over variable environment (VE) of the
+// //   execution context (EC)in which a function was created,
+// //   even after when the execution gone is gone.
+// // 2) A closure gives a function access to all the variables of its
+// //   parent function, even after that parent function has returned.
+// //   The function keeps a reference to its outer scope, which
+// //   preservers the scope chain throughout time.
+// // 3) A closure makes sure that a function doesn't lose connection
+// //   to the variables that existed at the time & place of the function's birth.
+// // 4) A closure is like a backpack that a function carries around wherever
+// //  it goes. This backpack has all the variables that were present in
+// //  the environment where the function was created.
+// const secureBooking = function () {
+//   let passengerCount = 0;
 
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
+
+// const booker = secureBooking();
+
+// // These instatiations will increase the passengerCount even though
+// // that variable doesn't exist in the execution context.
+// //   The function is able to do that because it was created within the
+// //   variable environment of the secureBooking function, which holds
+// //   the passengerCount variable
+// booker();
+// booker();
+// booker();
+
+// console.dir(booker);
+
+//
+//
+//
+
+// LESSON: More Closure Examples
+
+// Example 1
+let f;
+
+// f will be assigned a function within this function
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
   };
 };
 
-const booker = secureBooking();
+// then f will have a new function re-assigned to it after h() is instantiated
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
 
-// These instatiations will increase the passengerCount even though
-// that variable doesn't exist in the execution context.
-//   The function is able to do that because it was created within the
-//   variable environment of the secureBooking function, which holds
-//   the passengerCount variable
-booker();
-booker();
-booker();
+g();
+f(); // at this point the VE of 'g' is closed and gone, but due to closure
+// the 'f' function still has access to the variable 'a'
 
-console.dir(booker);
+h();
+f(); // by this point the 'f' function has been re-assigned due to the 'h' function
+// and by this point, f will no longer have access to the closure from 'g', such as
+// the 'a' variable. You can see that below
+console.dir(f);
+
+//
+// Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers.`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers.`);
+  }, wait * 1000);
+  console.log(`Will start boarding in ${wait} seconds.`);
+};
+
+// * In the above example 'boardPassengers', the inner function 'setTimeout'
+//   shows an example of CLOSURE. Why? setTimeout has a 3 second wait time.
+//   By the time the wait is over, the variable environment for the outer
+//   function would have closed already, but the inner function still has
+//   access to variables and arguments from the outer function.
+
+// * The line belowshows that closure has priority over the scope chain,
+//   because the variable on this line will NOT be used, instead
+//   the one from within the function's closure will be.
+const perGroup = 1000;
+boardPassengers(180, 3);
