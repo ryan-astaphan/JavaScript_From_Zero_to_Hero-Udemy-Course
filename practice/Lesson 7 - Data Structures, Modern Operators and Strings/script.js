@@ -8,49 +8,49 @@
 // //
 // LESSON: Destructuring Arrays
 // Data needed for first part of the section
-const restaurant = {
-  nameRest: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   nameRest: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
 
-  orderDelivery: function ({ starterIndex, mainIndex, address, time }) {
-    console.log(
-      `Ordered received! ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]} \
-will be delivered to ${address} at ${time}.`
-    );
-  },
+//   orderDelivery: function ({ starterIndex, mainIndex, address, time }) {
+//     console.log(
+//       `Ordered received! ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]} \
+// will be delivered to ${address} at ${time}.`
+//     );
+//   },
 
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(`Here is your delicious pasta with the following 3 ingredients 
-${ing1}, ${ing2} and ${ing3}.`);
-  },
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(`Here is your delicious pasta with the following 3 ingredients
+// ${ing1}, ${ing2} and ${ing3}.`);
+//   },
 
-  orderPizza: function (mainIng, ...otherIngredients) {
-    console.log(mainIng);
-    console.log(otherIngredients);
-  },
+//   orderPizza: function (mainIng, ...otherIngredients) {
+//     console.log(mainIng);
+//     console.log(otherIngredients);
+//   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-};
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+// };
 
 // const arr = [2, 3, 4];
 // const a = arr[0];
@@ -233,20 +233,96 @@ ${ing1}, ${ing2} and ${ing3}.`);
 // ------------------------------------------------
 // ------------------------------------------------
 
-// LESSON: Looping Arrays - the for-of loop
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// // LESSON: Looping Arrays - the for-of loop
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-// the for-of loop
-for (const item of menu) console.log(item);
+// // the for-of loop
+// for (const item of menu) console.log(item);
 
-// How to use the for-of loop with indexes returned
-for (const item of menu.entries()) {
-  console.log(item);
-}
+// // How to use the for-of loop with indexes returned
+// for (const item of menu.entries()) {
+//   console.log(item);
+// }
 
-console.log([...menu.entries()]); // taking a look at what the entries object looks like
+// console.log([...menu.entries()]); // taking a look at what the entries object looks like
 
-// Again, returning the indexes within a for-of loop, but while DESTRUCTURING the item
-for (const [item, element] of menu.entries()) {
-  console.log(`${item + 1}: ${element}`);
-}
+// // Again, returning the indexes within a for-of loop, but while DESTRUCTURING the item
+// for (const [item, element] of menu.entries()) {
+//   console.log(`${item + 1}: ${element}`);
+// }
+
+// ------------------------------------------------
+// ------------------------------------------------
+// ------------------------------------------------
+
+// LESSON: Enhanced Object Literals
+const daysOfWeek = ['mon', 'tues', 'wed', 'thurs'];
+const openingHours = {
+  // ES6 enhanced object literals
+  // object property that references an external array
+  [daysOfWeek[0]]: {
+    open: 12,
+    close: 22,
+  },
+  [daysOfWeek[2]]: {
+    open: 11,
+    close: 23,
+  },
+  [daysOfWeek[3]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  nameRest: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  // ES6 enhanced object literal
+  // function properties that don't have to use the function keyword
+  // Example of TRADITIONAL method
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  // Example with ENHANCED OBJECT LITERAL method
+  orderDelivery({ starterIndex, mainIndex, address, time }) {
+    console.log(
+      `Ordered received! ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]} \
+will be delivered to ${address} at ${time}.`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with the following 3 ingredients 
+${ing1}, ${ing2} and ${ing3}.`);
+  },
+
+  orderPizza: function (mainIng, ...otherIngredients) {
+    console.log(mainIng);
+    console.log(otherIngredients);
+  },
+  // ES6 enhanced object literal
+  // Calling a constant with the same name as the property
+  openingHours,
+};
+
+// Testing the enhanced object literals
+// 1) object property with a value that is equal to an outside variable with the same name
+console.log(restaurant.openingHours);
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat);
+console.log(weekdays);
+
+// 2) function property
+restaurant.orderDelivery({
+  mainIndex: 0,
+  starterIndex: 2,
+  address: '960 Sorrento Drive',
+  time: '11:30',
+});
+
+// 3) object property referencing external array
+console.log(openingHours);
