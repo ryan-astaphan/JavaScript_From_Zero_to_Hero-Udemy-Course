@@ -147,20 +147,68 @@
 //
 //
 
-// LESSON: Functions Returning Functions
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
+// // LESSON: Functions Returning Functions
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+// // below we set a variable that is essentially equal to the retured function
+// const greetingPhrase = greet('Hey');
+// // we can then call that variable with the person's name
+// greetingPhrase('Ei');
+
+// // we can even call both functions all in 1 go:
+// greet("What's up")('Ahm');
+
+// // The above functions can be re-written as arrow functions
+// const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
+// greetArrow('Sawatdee khrap')('Wooteepat');
+
+//
+//
+//
+
+// LESSON: Closures
+// * A function always has access to the variable environment (VE)
+//   of the execution context in which it was created
+//
+// * CLOSURE: closure is the VE attached to the function,
+//     exactly as it was at the time and place when the function was created.
+//
+// * Closure has the highest-most priority within the scope chain
+
+// MORE CLOSURE DEFINTIONS:
+// 1) A closure is the closed-over variable environment (VE) of the
+//   execution context (EC)in which a function was created,
+//   even after when the execution gone is gone.
+// 2) A closure gives a function access to all the variables of its
+//   parent function, even after that parent function has returned.
+//   The function keeps a reference to its outer scope, which
+//   preservers the scope chain throughout time.
+// 3) A closure makes sure that a function doesn't lose connection
+//   to the variables that existed at the time & place of the function's birth.
+// 4) A closure is like a backpack that a function carries around wherever
+//  it goes. This backpack has all the variables that were present in
+//  the environment where the function was created.
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
   };
 };
-// below we set a variable that is essentially equal to the retured function
-const greetingPhrase = greet('Hey');
-// we can then call that variable with the person's name
-greetingPhrase('Ei');
 
-// we can even call both functions all in 1 go:
-greet("What's up")('Ahm');
+const booker = secureBooking();
 
-// The above functions can be re-written as arrow functions
-const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
-greetArrow('Sawatdee khrap')('Wooteepat');
+// These instatiations will increase the passengerCount even though
+// that variable doesn't exist in the execution context.
+//   The function is able to do that because it was created within the
+//   variable environment of the secureBooking function, which holds
+//   the passengerCount variable
+booker();
+booker();
+booker();
+
+console.dir(booker);
