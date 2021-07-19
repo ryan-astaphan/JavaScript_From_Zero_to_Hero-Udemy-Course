@@ -255,74 +255,114 @@
 // ------------------------------------------------
 // ------------------------------------------------
 
-// LESSON: Enhanced Object Literals
-const daysOfWeek = ['mon', 'tues', 'wed', 'thurs'];
-const openingHours = {
-  // ES6 enhanced object literals
-  // object property that references an external array
-  [daysOfWeek[0]]: {
-    open: 12,
-    close: 22,
-  },
-  [daysOfWeek[2]]: {
-    open: 11,
-    close: 23,
-  },
-  [daysOfWeek[3]]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
+// // LESSON: Enhanced Object Literals
+// const daysOfWeek = ['mon', 'tues', 'wed', 'thurs'];
+// const openingHours = {
+//   // ES6 enhanced object literals
+//   // object property that references an external array
+//   [daysOfWeek[0]]: {
+//     open: 12,
+//     close: 22,
+//   },
+//   [daysOfWeek[2]]: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [daysOfWeek[3]]: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
+
+// const restaurant = {
+//   nameRest: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   // ES6 enhanced object literal
+//   // function properties that don't have to use the function keyword
+//   // Example of TRADITIONAL method
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   // Example with ENHANCED OBJECT LITERAL method
+//   orderDelivery({ starterIndex, mainIndex, address, time }) {
+//     console.log(
+//       `Ordered received! ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]} \
+// will be delivered to ${address} at ${time}.`
+//     );
+//   },
+
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(`Here is your delicious pasta with the following 3 ingredients
+// ${ing1}, ${ing2} and ${ing3}.`);
+//   },
+
+//   orderPizza: function (mainIng, ...otherIngredients) {
+//     console.log(mainIng);
+//     console.log(otherIngredients);
+//   },
+//   // ES6 enhanced object literal
+//   // Calling a constant with the same name as the property
+//   openingHours,
+// };
+
+// // Testing the enhanced object literals
+// // 1) object property with a value that is equal to an outside variable with the same name
+// console.log(restaurant.openingHours);
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(sat);
+// console.log(weekdays);
+
+// // 2) function property
+// restaurant.orderDelivery({
+//   mainIndex: 0,
+//   starterIndex: 2,
+//   address: '960 Sorrento Drive',
+//   time: '11:30',
+// });
+
+// // 3) object property referencing external array
+// console.log(openingHours);
+
+// ------------------------------------------------
+// ------------------------------------------------
+// ------------------------------------------------
+
+// LESSON: Working With Strings Part 1
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+
+console.log(plane.length);
+console.log('737'.length);
+
+console.log(airline.indexOf('r')); // this just gives index of FIRST occurence
+console.log(airline.lastIndexOf('r')); // this just gives index of LAST occurence
+console.log(airline.indexOf('Portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' '))); // returns FIRST word
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // returns LAST word
+
+console.log(airline.slice(-3));
+console.log(airline.slice(1, -1));
+
+// Example
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const seatLetter = seat.slice(-1);
+  if (seatLetter === 'B' || seatLetter === 'E')
+    console.log('You got the middle seat 😭');
+  else console.log("You didn't get the middle seat!!! 😁");
 };
 
-const restaurant = {
-  nameRest: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  // ES6 enhanced object literal
-  // function properties that don't have to use the function keyword
-  // Example of TRADITIONAL method
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  // Example with ENHANCED OBJECT LITERAL method
-  orderDelivery({ starterIndex, mainIndex, address, time }) {
-    console.log(
-      `Ordered received! ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]} \
-will be delivered to ${address} at ${time}.`
-    );
-  },
-
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(`Here is your delicious pasta with the following 3 ingredients 
-${ing1}, ${ing2} and ${ing3}.`);
-  },
-
-  orderPizza: function (mainIng, ...otherIngredients) {
-    console.log(mainIng);
-    console.log(otherIngredients);
-  },
-  // ES6 enhanced object literal
-  // Calling a constant with the same name as the property
-  openingHours,
-};
-
-// Testing the enhanced object literals
-// 1) object property with a value that is equal to an outside variable with the same name
-console.log(restaurant.openingHours);
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(sat);
-console.log(weekdays);
-
-// 2) function property
-restaurant.orderDelivery({
-  mainIndex: 0,
-  starterIndex: 2,
-  address: '960 Sorrento Drive',
-  time: '11:30',
-});
-
-// 3) object property referencing external array
-console.log(openingHours);
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
