@@ -26,6 +26,11 @@ will be delivered to ${address} at ${time}.`
     );
   },
 
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with the following 3 ingredients 
+${ing1}, ${ing2} and ${ing3}.`);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -88,46 +93,90 @@ will be delivered to ${address} at ${time}.`
 //
 //
 
-// LESSON: Destructuring Objects
-// destructuring an object
-const { nameRest, openingHours, categories } = restaurant;
-console.log(nameRest, openingHours, categories);
+// // LESSON: Destructuring Objects
+// // destructuring an object
+// const { nameRest, openingHours, categories } = restaurant;
+// console.log(nameRest, openingHours, categories);
 
-// re-naming the variables within the object
-const {
-  nameRest: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+// // re-naming the variables within the object
+// const {
+//   nameRest: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
 
-// setting default values (plus changing one variable name)
-const {
-  menu = ['Pepperoni', 'Meatball and Mushroom'],
-  starterMenu: starters = [],
-} = restaurant;
-console.log(menu, starters);
+// // setting default values (plus changing one variable name)
+// const {
+//   menu = ['Pepperoni', 'Meatball and Mushroom'],
+//   starterMenu: starters = [],
+// } = restaurant;
+// console.log(menu, starters);
 
-// Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-({ a, b } = obj); // by wrapping the entire line of code in parentheses,
-// ^^ it allows us to mutate the variables. Without the parentheses this wouldn't work.
-console.log(a, b);
+// // Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj); // by wrapping the entire line of code in parentheses,
+// // ^^ it allows us to mutate the variables. Without the parentheses this wouldn't work.
+// console.log(a, b);
 
-// Nested objects
-let { fri } = openingHours;
-console.log(fri);
-({
-  fri: { open, close }, // ^^ this line destructures the nested object
-} = openingHours);
-console.log(open, close);
+// // Nested objects
+// let { fri } = openingHours;
+// console.log(fri);
+// ({
+//   fri: { open, close }, // ^^ this line destructures the nested object
+// } = openingHours);
+// console.log(open, close);
 
-// ---
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// // ---
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+
+//
+//
+//
+
+// LECTURE: The Spread Operator (expanding an array)
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci', 'Mozarella Sticks'];
+console.log(newMenu);
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu]; // this is a shallow-copy
+
+// Join 2 arrays or more
+const combinedMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(combinedMenu);
+
+// The SPREAD operator works on all ITERABLES
+// Iterables: arrays, strings, maps and sets. NOT objects
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+console.log(...str);
+
+// Real-world example
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1?"),
+  prompt('Ingredient 2?'),
+  prompt('Ingredient 3?'),
+];
+console.log(ingredients);
+restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { ...restaurant, founder: 'Ryano', foundedIn: 1998 };
+// as a note, the above will make an actual copy, not just a reference
+console.log(newRestaurant);
