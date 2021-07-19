@@ -333,27 +333,27 @@
 
 // LESSON: Working With Strings Part 1
 const airline = 'TAP Air Portugal';
-const plane = 'A320';
+let plane = 'A320';
 
-console.log(plane[0]);
-console.log(plane[1]);
-console.log(plane[2]);
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
 
-console.log(plane.length);
-console.log('737'.length);
+// console.log(plane.length);
+// console.log('737'.length);
 
-console.log(airline.indexOf('r')); // this just gives index of FIRST occurence
-console.log(airline.lastIndexOf('r')); // this just gives index of LAST occurence
-console.log(airline.indexOf('Portugal'));
+// console.log(airline.indexOf('r')); // this just gives index of FIRST occurence
+// console.log(airline.lastIndexOf('r')); // this just gives index of LAST occurence
+// console.log(airline.indexOf('Portugal'));
 
-console.log(airline.slice(4));
-console.log(airline.slice(4, 7));
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 7));
 
-console.log(airline.slice(0, airline.indexOf(' '))); // returns FIRST word
-console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // returns LAST word
+// console.log(airline.slice(0, airline.indexOf(' '))); // returns FIRST word
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // returns LAST word
 
-console.log(airline.slice(-3));
-console.log(airline.slice(1, -1));
+// console.log(airline.slice(-3));
+// console.log(airline.slice(1, -1));
 
 // Example
 const checkMiddleSeat = function (seat) {
@@ -364,5 +364,63 @@ const checkMiddleSeat = function (seat) {
   else console.log("You didn't get the middle seat!!! 😁");
 };
 
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+
+// ------------------------------------------------
+// ------------------------------------------------
+// ------------------------------------------------
+
+// LESSON: Working With Strings Part 2
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// fix capitalization
+const passenger = 'jOnas';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+// a much simpler way to do the above normalization
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+// replacing parts of strings
+const priceGB = '£288,97';
+const priceUS = priceGB.replace(',', '.').replace('£', '$');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23.';
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Booleans
+plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+console.log(plane.startsWith('A3'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('You are flying on a brand-new airplane!');
+}
+
+// practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on the airplane');
+  } else {
+    console.log('You are ready and able to board the airplane');
+  }
+};
+
+checkBaggage('I have a laptop, some food and a pocket knife.');
+checkBaggage('Just some books');
+checkBaggage('Got my hunting rifle, aka a gun, in my bag!');
