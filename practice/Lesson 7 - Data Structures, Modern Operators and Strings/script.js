@@ -31,6 +31,11 @@ will be delivered to ${address} at ${time}.`
 ${ing1}, ${ing2} and ${ing3}.`);
   },
 
+  orderPizza: function (mainIng, ...otherIngredients) {
+    console.log(mainIng);
+    console.log(otherIngredients);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -141,42 +146,85 @@ ${ing1}, ${ing2} and ${ing3}.`);
 //
 //
 
-// LECTURE: The Spread Operator (expanding an array)
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+// // LECTURE: The Spread Operator (expanding an array)
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
-console.log(...newArr);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+// console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci', 'Mozarella Sticks'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci', 'Mozarella Sticks'];
+// console.log(newMenu);
 
-// Copy array
-const mainMenuCopy = [...restaurant.mainMenu]; // this is a shallow-copy
+// // Copy array
+// const mainMenuCopy = [...restaurant.mainMenu]; // this is a shallow-copy
 
-// Join 2 arrays or more
+// // Join 2 arrays or more
 const combinedMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(combinedMenu);
 
-// The SPREAD operator works on all ITERABLES
-// Iterables: arrays, strings, maps and sets. NOT objects
-const str = 'Jonas';
-const letters = [...str, ' ', 'S.'];
-console.log(letters);
-console.log(...str);
+// // The SPREAD operator works on all ITERABLES
+// // Iterables: arrays, strings, maps and sets. NOT objects
+// const str = 'Jonas';
+// const letters = [...str, ' ', 'S.'];
+// console.log(letters);
+// console.log(...str);
 
-// Real-world example
-const ingredients = [
-  prompt("Let's make pasta! Ingredient 1?"),
-  prompt('Ingredient 2?'),
-  prompt('Ingredient 3?'),
+// // Real-world example
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+// console.log(ingredients);
+// restaurant.orderPasta(...ingredients);
+
+// // Objects
+// const newRestaurant = { ...restaurant, founder: 'Ryano', foundedIn: 1998 };
+// // as a note, the above will make an actual copy, not just a reference
+// console.log(newRestaurant);
+
+// ------------------------------------------------
+// ------------------------------------------------
+// ------------------------------------------------
+
+// LESSON: Rest Pattern and Parameters
+// *the rest parameter builds an array from multiple values
+
+// example of SPREAD
+// * you can tell it's spread because it is on the RIGHT side of the = equal sign
+const arr = [1, 2, ...[4, 5]];
+
+// REST, because it is on the LEFT side of the = equal sign
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
-console.log(ingredients);
-restaurant.orderPasta(...ingredients);
+console.log(pizza, risotto, otherFood); // notice that skipped elements will not be included
 
 // Objects
-const newRestaurant = { ...restaurant, founder: 'Ryano', foundedIn: 1998 };
-// as a note, the above will make an actual copy, not just a reference
-console.log(newRestaurant);
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// REST PARAMETERS on Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(6, 9, 2, 3, 5, 3);
+
+const x = [23, 5, 7];
+add(...x);
+
+// Restaurant method example
+restaurant.orderPizza('mushrooms', 'meatballs', 'pepperoni');
+restaurant.orderPizza('olives');
