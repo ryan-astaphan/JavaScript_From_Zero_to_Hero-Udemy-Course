@@ -162,8 +162,8 @@ ${ing1}, ${ing2} and ${ing3}.`);
 // const mainMenuCopy = [...restaurant.mainMenu]; // this is a shallow-copy
 
 // // Join 2 arrays or more
-const combinedMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(combinedMenu);
+// const combinedMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(combinedMenu);
 
 // // The SPREAD operator works on all ITERABLES
 // // Iterables: arrays, strings, maps and sets. NOT objects
@@ -190,41 +190,63 @@ console.log(combinedMenu);
 // ------------------------------------------------
 // ------------------------------------------------
 
-// LESSON: Rest Pattern and Parameters
-// *the rest parameter builds an array from multiple values
+// // LESSON: Rest Pattern and Parameters
+// // *the rest parameter builds an array from multiple values
 
-// example of SPREAD
-// * you can tell it's spread because it is on the RIGHT side of the = equal sign
-const arr = [1, 2, ...[4, 5]];
+// // example of SPREAD
+// // * you can tell it's spread because it is on the RIGHT side of the = equal sign
+// const arr = [1, 2, ...[4, 5]];
 
-// REST, because it is on the LEFT side of the = equal sign
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// // REST, because it is on the LEFT side of the = equal sign
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood); // notice that skipped elements will not be included
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood); // notice that skipped elements will not be included
 
-// Objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// // Objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-// REST PARAMETERS on Functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
-};
+// // REST PARAMETERS on Functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
 
-add(2, 3);
-add(5, 3, 7, 2);
-add(6, 9, 2, 3, 5, 3);
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(6, 9, 2, 3, 5, 3);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
 
-// Restaurant method example
-restaurant.orderPizza('mushrooms', 'meatballs', 'pepperoni');
-restaurant.orderPizza('olives');
+// // Restaurant method example
+// restaurant.orderPizza('mushrooms', 'meatballs', 'pepperoni');
+// restaurant.orderPizza('olives');
+
+// ------------------------------------------------
+// ------------------------------------------------
+// ------------------------------------------------
+
+// LESSON: Looping Arrays - the for-of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// the for-of loop
+for (const item of menu) console.log(item);
+
+// How to use the for-of loop with indexes returned
+for (const item of menu.entries()) {
+  console.log(item);
+}
+
+console.log([...menu.entries()]); // taking a look at what the entries object looks like
+
+// Again, returning the indexes within a for-of loop, but while DESTRUCTURING the item
+for (const [item, element] of menu.entries()) {
+  console.log(`${item + 1}: ${element}`);
+}
