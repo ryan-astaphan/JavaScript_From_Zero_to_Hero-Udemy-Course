@@ -213,25 +213,56 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
-console.log(movements);
+// console.log(movements);
 
-// *  The Reduce method takes in 4 parameters
-//    (accumulator, current element, index and array)
-//    and also a starting value for the accumulator.
-const balance = movements.reduce(function (accumulator, current, index, array) {
-  console.log(`Iteration # ${index + 1}) Total accumulation: ${accumulator}`);
-  return accumulator + current;
-}, 0); // 0 refers to the starting value of the accumulator
+// // *  The Reduce method takes in 4 parameters
+// //    (accumulator, current element, index and array)
+// //    and also a starting value for the accumulator.
+// const balance = movements.reduce(function (accumulator, current, index, array) {
+//   console.log(`Iteration # ${index + 1}) Total accumulation: ${accumulator}`);
+//   return accumulator + current;
+// }, 0); // 0 refers to the starting value of the accumulator
 
-console.log(balance);
+// console.log(balance);
 
-// as an ARROW function
-const balance2 = movements.reduce((acc, mov) => acc + mov, 100);
-console.log(balance2);
+// // as an ARROW function
+// const balance2 = movements.reduce((acc, mov) => acc + mov, 100);
+// console.log(balance2);
 
-// Maximum value
-const maxValue = movements.reduce(
-  (acc, mov) => (acc > mov ? acc : (acc = mov)),
-  movements[0]
-);
-console.log(maxValue);
+// // Maximum value
+// const maxValue = movements.reduce(
+//   (acc, mov) => (acc > mov ? acc : (acc = mov)),
+//   movements[0]
+// );
+// console.log(maxValue);
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURE: The Magic of Chaining Methods
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+// Notes on Chaining
+// 1) Don't make extremely long chains, it will slow down performance.
+//    Look to optimize your chain when possible. For example, sometimes
+//    multiple map methods can be reduced down into 1 method.
+// 2) Don't chain with methods that MUTATE the original array, such as splice.
+
+const eurToUsd = 1.1;
+
+// Chaining is like creating a PIPELINE
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, cur) => acc + cur, 0);
+console.log(totalDepositsUSD);
+
+// De-bugging a chain: add logs
+const totalDepositsUSD2 = movements
+  .filter(mov => mov > 0)
+  .map((mov, i, arr) => {
+    console.log(arr);
+    return mov * eurToUsd;
+  })
+  .reduce((acc, cur) => acc + cur, 0);
+console.log(totalDepositsUSD);
