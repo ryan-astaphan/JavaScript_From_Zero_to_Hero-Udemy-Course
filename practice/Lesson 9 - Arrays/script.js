@@ -171,24 +171,38 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
-const eurToUsd = 1.1;
+// const eurToUsd = 1.1;
 
-// Map Method
-const movementsUSD = movements.map(function (mov) {
-  return mov * eurToUsd;
+// // Map Method
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+
+// // Map Method with ARROW function
+// const movementsUSD2 = movements.map(mov => mov * eurToUsd);
+
+// console.log(movements);
+// console.log(movementsUSD);
+// console.log(movementsUSD2);
+
+// const movementsTally = movements.map(
+//   (mov, i, arr) =>
+//     `${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+//       mov
+//     )} dollars.`
+// );
+// console.log(movementsTally);
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURE: The Filter Method
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
 });
+console.log(deposits);
 
-// Map Method with ARROW function
-const movementsUSD2 = movements.map(mov => mov * eurToUsd);
-
-console.log(movements);
-console.log(movementsUSD);
-console.log(movementsUSD2);
-
-const movementsTally = movements.map(
-  (mov, i, arr) =>
-    `${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
-      mov
-    )} dollars.`
-);
-console.log(movementsTally);
+const withdrawls = movements.filter(mov => mov < 0);
+console.log(withdrawls);
