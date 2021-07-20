@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -116,33 +116,33 @@ const currencies = new Map([
 /////////////////////////////////////////////////
 // LECTURE: Looping Arrays: forEach
 // **   Continue and Break do NOT work in forEach loops
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-for (const [i, v] of movements.entries()) {
-  if (v > 0) {
-    console.log(`${i + 1}. You deposited ${v} dollars`);
-  } else {
-    console.log(`${i + 1}. You withdrew ${Math.abs(v)} dollars.`);
-  }
-}
+// for (const [i, v] of movements.entries()) {
+//   if (v > 0) {
+//     console.log(`${i + 1}. You deposited ${v} dollars`);
+//   } else {
+//     console.log(`${i + 1}. You withdrew ${Math.abs(v)} dollars.`);
+//   }
+// }
 
-console.log('----------------');
-console.log('----------------');
-console.log('---------forEach loop---------');
-console.log('----------------');
-console.log('----------------');
+// console.log('----------------');
+// console.log('----------------');
+// console.log('---------forEach loop---------');
+// console.log('----------------');
+// console.log('----------------');
 
-// The forEach function takes in 3 parameters:
-//    1) the current element
-//    2) the index
-//    3) the entire array
-movements.forEach(function (movement, index, array) {
-  if (movement > 0) {
-    console.log(`${index + 1}. You deposited ${movement} dollars`);
-  } else {
-    console.log(`${index + 1}. You withdrew ${Math.abs(movement)} dollars.`);
-  }
-});
+// // The forEach function takes in 3 parameters:
+// //    1) the current element
+// //    2) the index
+// //    3) the entire array
+// movements.forEach(function (movement, index, array) {
+//   if (movement > 0) {
+//     console.log(`${index + 1}. You deposited ${movement} dollars`);
+//   } else {
+//     console.log(`${index + 1}. You withdrew ${Math.abs(movement)} dollars.`);
+//   }
+// });
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -164,3 +164,31 @@ movements.forEach(function (movement, index, array) {
 // -  Reduce "boils down" (or filters) all array elements
 //    into one single value, such as adding all of them together.
 //    ex.  sum + current
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURE: The Map Method
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+const eurToUsd = 1.1;
+
+// Map Method
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
+
+// Map Method with ARROW function
+const movementsUSD2 = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+console.log(movementsUSD2);
+
+const movementsTally = movements.map(
+  (mov, i, arr) =>
+    `${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )} dollars.`
+);
+console.log(movementsTally);
