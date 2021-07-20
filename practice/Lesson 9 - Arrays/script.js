@@ -71,41 +71,75 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// // LECTURE: Simple Array Methods
 
-let arr = ['a', 'b', 'c', 'd', 'e'];
+// let arr = ['a', 'b', 'c', 'd', 'e'];
 
-// SLICE Method
-// * Splice does NOT MUTATE the original array
-console.log(arr.slice(2));
-console.log(arr.slice(2, 4));
-console.log(arr.slice(-2));
-console.log(arr.slice(-1)); // only returns last value
-console.log(arr.slice(1, -2));
-console.log(arr.slice());
+// // SLICE Method
+// // * Splice does NOT MUTATE the original array
+// console.log(arr.slice(2));
+// console.log(arr.slice(2, 4));
+// console.log(arr.slice(-2));
+// console.log(arr.slice(-1)); // only returns last value
+// console.log(arr.slice(1, -2));
+// console.log(arr.slice());
 
-// SPLICE Method
-// * Splice DOES MUTATE the original array
-// * The 1st argument of splice is an index
-// * The 2nd argument of splice is the # of values to remove
-// console.log(arr.splice(2));
-arr.splice(1, 3);
-console.log(arr); // the original array is mutated from the SPLICE method
+// // SPLICE Method
+// // * Splice DOES MUTATE the original array
+// // * The 1st argument of splice is an index
+// // * The 2nd argument of splice is the # of values to remove
+// // console.log(arr.splice(2));
+// arr.splice(1, 3);
+// console.log(arr); // the original array is mutated from the SPLICE method
 
-// REVERSE Method
-// *Reverse DOES MUTATE the original array
-arr = ['a', 'b', 'c', 'd', 'e'];
-console.log(arr.reverse());
+// // REVERSE Method
+// // *Reverse DOES MUTATE the original array
+// arr = ['a', 'b', 'c', 'd', 'e'];
+// console.log(arr.reverse());
 
-// CONCAT
-// *Concat does NOT MUTATE the original array
-const arr2 = ['f', 'g', 'h'];
-const letters = arr.concat(arr2);
-console.log(letters);
-// another way to achieve the same result as concat is the SPREAD method
-console.log(...arr, ...arr2);
+// // CONCAT
+// // *Concat does NOT MUTATE the original array
+// const arr2 = ['f', 'g', 'h'];
+// const letters = arr.concat(arr2);
+// console.log(letters);
+// // another way to achieve the same result as concat is the SPREAD method
+// console.log(...arr, ...arr2);
 
-// JOIN
-console.log(letters.join(' - '));
+// // JOIN
+// console.log(letters.join(' - '));
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURE: Looping Arrays: forEach
+// **   Continue and Break do NOT work in forEach loops
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const [i, v] of movements.entries()) {
+  if (v > 0) {
+    console.log(`${i + 1}. You deposited ${v} dollars`);
+  } else {
+    console.log(`${i + 1}. You withdrew ${Math.abs(v)} dollars.`);
+  }
+}
+
+console.log('----------------');
+console.log('----------------');
+console.log('---------forEach loop---------');
+console.log('----------------');
+console.log('----------------');
+
+// The forEach function takes in 3 parameters:
+//    1) the current element
+//    2) the index
+//    3) the entire array
+movements.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`${index + 1}. You deposited ${movement} dollars`);
+  } else {
+    console.log(`${index + 1}. You withdrew ${Math.abs(movement)} dollars.`);
+  }
+});
