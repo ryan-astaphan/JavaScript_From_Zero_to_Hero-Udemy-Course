@@ -143,3 +143,24 @@ movements.forEach(function (movement, index, array) {
     console.log(`${index + 1}. You withdrew ${Math.abs(movement)} dollars.`);
   }
 });
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURE: Data Transformations with MAP, FILTER and REDUCE
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+// MAP
+// -  Map returns a new array containing the results of
+//    applying an operation on all original array elements.
+//    ex.  current * 2
+
+// FILTER
+// -  Filter returns a new array containing the array
+//    elements that passed a specified test condition
+//    ex.  current > 2
+
+// REDUCE
+// -  Reduce "boils down" (or filters) all array elements
+//    into one single value, such as adding all of them together.
+//    ex.  sum + current
