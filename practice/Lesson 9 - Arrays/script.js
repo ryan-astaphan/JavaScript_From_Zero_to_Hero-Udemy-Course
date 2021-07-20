@@ -199,10 +199,39 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
-const deposits = movements.filter(function (mov) {
-  return mov > 0;
-});
-console.log(deposits);
+// const deposits = movements.filter(function (mov) {
+//   return mov > 0;
+// });
+// console.log(deposits);
 
-const withdrawls = movements.filter(mov => mov < 0);
-console.log(withdrawls);
+// const withdrawls = movements.filter(mov => mov < 0);
+// console.log(withdrawls);
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURE: The Reduce Method
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+console.log(movements);
+
+// *  The Reduce method takes in 4 parameters
+//    (accumulator, current element, index and array)
+//    and also a starting value for the accumulator.
+const balance = movements.reduce(function (accumulator, current, index, array) {
+  console.log(`Iteration # ${index + 1}) Total accumulation: ${accumulator}`);
+  return accumulator + current;
+}, 0); // 0 refers to the starting value of the accumulator
+
+console.log(balance);
+
+// as an ARROW function
+const balance2 = movements.reduce((acc, mov) => acc + mov, 100);
+console.log(balance2);
+
+// Maximum value
+const maxValue = movements.reduce(
+  (acc, mov) => (acc > mov ? acc : (acc = mov)),
+  movements[0]
+);
+console.log(maxValue);
