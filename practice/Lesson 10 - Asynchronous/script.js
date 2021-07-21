@@ -163,8 +163,8 @@
 // request.open('GET', `https://restcountries.eu/rest/v2/name/${country}`);
 // request.send();
 
-const requestFetch = fetch('https://restcountries.eu/rest/v2/name/thailand');
-console.log(requestFetch);
+// const requestFetch = fetch('https://restcountries.eu/rest/v2/name/thailand');
+// console.log(requestFetch);
 
 // What are PROMISES?
 // -    A promise is an object that is used as a placeholder for the future
@@ -188,3 +188,55 @@ console.log(requestFetch);
 // *    The outcome of a promise is settled only once and lasts forever
 // i.   Promises are 1st BUILT - such as the Fetch API returning a promise
 // ii.  Promises are 2nd CONSUMED - when we already have a promise
+
+///////////////////////////////////////
+// LESSON: Consuming Promises
+///////////////////////////////////////
+
+const btn = document.querySelector('.btn-country');
+const countriesContainer = document.querySelector('.countries');
+
+const renderCountry = function (data, className) {
+  const html = `
+    <article class="country ${className}">
+    <img class="country__img" src="${data.flag}" />
+    <div class="country__data">
+      <h3 class="country__name">${data.name}</h3>
+      <h4 class="country__region">${data.region}</h4>
+      <p class="country__row"><span>👫</span>${(
+        data.population / 1000000
+      ).toFixed(1)} million</p>
+      <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
+      <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
+    </div>
+  </article>
+  `;
+  countriesContainer.insertAdjacentHTML('beforeend', html);
+  countriesContainer.style.opacity = 1;
+};
+
+const requestFetch = fetch('https://restcountries.eu/rest/v2/name/thailand');
+console.log(requestFetch);
+
+const getCountryData = function (country) {
+  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      renderCountry(data[0]);
+    });
+};
+
+getCountryData('thailand');
+
+// Cleaner version of above function
+const getCountryData2 = function (country) {
+  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+    .then(response => response.json())
+    .then(data => renderCountry(data[0]));
+};
+
+getCountryData2('usa');
