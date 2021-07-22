@@ -357,3 +357,17 @@ whereAmI('Brunei');
 console.log(
   'This code should come out prior to the results of the whereAmI function'
 );
+
+///////////////////////////////////////
+// LESSON: Error handling with try..catch
+///////////////////////////////////////
+
+// -    With async/await we use the try/catch method to handle errors
+
+try {
+  let y = 1;
+  const x = 2;
+  x = 3;
+} catch (err) {
+  alert(err.message);
+}
