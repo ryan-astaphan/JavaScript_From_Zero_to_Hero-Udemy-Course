@@ -298,8 +298,6 @@ const getCountryData = function (country) {
     });
 };
 
-getCountryData('bhutfffan');
-
 ///////////////////////////////////////
 // LESSON: Handling Rejected Promises
 ///////////////////////////////////////
@@ -332,3 +330,30 @@ btn.addEventListener('click', function () {
 // -    Callbacks from promises don't enter the Callback Queue
 // -    They have their own special queue called the 'Microtasks Queue'
 // *    The Microtasks Queue has priority over the callback queue
+
+///////////////////////////////////////
+// LESSON: Consuming Promises with Async/Await
+///////////////////////////////////////
+
+// -    Async Functions run asynchronously in the background
+// -    The 'await' command tells the code to stop running until
+//      a promise is resolved.
+//      * This is no problem however because it only affects the code
+//        within the function block.
+// -    The 'await' is equivalent to the .then, .catch, .finally syntax
+//      we were using before. It just hides them and simplifies everything
+//      for us.
+
+const whereAmI = async function (country) {
+  const response = await fetch(
+    `https://restcountries.eu/rest/v2/name/${country}`
+  ); // await fetch will return a response. Save it as a constant
+  const data = await response.json(); // parse the response with .json()
+  console.log(data);
+  renderCountry(data[0]);
+};
+
+whereAmI('Brunei');
+console.log(
+  'This code should come out prior to the results of the whereAmI function'
+);
