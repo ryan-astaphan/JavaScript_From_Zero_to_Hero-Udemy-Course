@@ -264,11 +264,16 @@ const renderCountry = function (data, className) {
   </article>
   `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
+  //   countriesContainer.style.opacity = 1;
 };
 
 const requestFetch = fetch('https://restcountries.eu/rest/v2/name/thailand');
 console.log(requestFetch);
+
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  //   countriesContainer.style.opacity = 1;
+};
 
 const getCountryData = function (country) {
   fetch(`https://restcountries.eu/rest/v2/name/${country}`)
@@ -283,7 +288,21 @@ const getCountryData = function (country) {
       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbor}`);
     })
     .then(response => response.json())
-    .then(data => renderCountry(data, 'neighbour'));
+    .then(data => renderCountry(data, 'neighbour'))
+    .catch(err => {
+      console.log(`${err}`);
+      renderError(`Something went wrong - ${err.message}`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
 };
 
-getCountryData('bhutan');
+getCountryData('bhutfffan');
+
+///////////////////////////////////////
+// LESSON: Handling Rejected Promises
+///////////////////////////////////////
+btn.addEventListener('click', function () {
+  getCountryData('Portugal');
+});
