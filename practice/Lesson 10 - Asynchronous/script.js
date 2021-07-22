@@ -303,6 +303,32 @@ getCountryData('bhutfffan');
 ///////////////////////////////////////
 // LESSON: Handling Rejected Promises
 ///////////////////////////////////////
+
 btn.addEventListener('click', function () {
   getCountryData('Portugal');
 });
+
+///////////////////////////////////////
+// LESSON: Asynchronous Behind the Scenes- The Event Loop
+///////////////////////////////////////
+
+// -    Javascript cannot execute multiple lines of code at the same time.
+//      (No multi-threading)
+// ?    So How canasynchronous code be executed in a non-blocking way
+//      if there is only 1 thread of execution in the JavaScript engine?
+
+// *    Asynchronous actions such as timers and fetch actually come from
+//      web APIs. So they actually run in the Web API environment. They are
+//      then placed in the callback queue when they are ready to be run.
+
+// The Event Loop
+// 1)   The event loop looks into the call stack to see if it is empty
+// 2)   If empty, the event loop will take the first callback from the
+//      callback queue and put it in the callstack.
+//      *   This is called 1 'event loop tick'
+// *    The Event Loop coordinates between the Call Stack & the Callback Queue
+
+// Callback Promises
+// -    Callbacks from promises don't enter the Callback Queue
+// -    They have their own special queue called the 'Microtasks Queue'
+// *    The Microtasks Queue has priority over the callback queue
