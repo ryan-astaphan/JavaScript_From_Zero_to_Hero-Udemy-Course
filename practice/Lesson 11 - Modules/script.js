@@ -23,3 +23,22 @@ console.log('Importing module');
 
 ShoppingCart.addToCart('TV', 5);
 console.log(ShoppingCart.totalPrice, ShoppingCart.totalQuantity);
+
+///////////////////////////////////////
+// LESSON: Introduction to NPM - Package Manager
+///////////////////////////////////////
+
+import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+
+const state = {
+  cart: [
+    { proudct: 'bread', quantity: 5 },
+    { proudct: 'pizza', quantity: 5 },
+  ],
+  user: { loggedIn: true },
+};
+
+const stateDeepClone = cloneDeep(state);
+state.user.loggedIn = false;
+console.log(state);
+console.log(stateDeepClone);
