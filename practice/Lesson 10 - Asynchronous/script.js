@@ -1,4 +1,8 @@
-'use strict';
+// importing module
+import './shoppingCart';
+console.log('Importing module');
+
+// 'use strict';
 
 ///////////////////////////////////////
 // LESSON: Asynchronous Javascript, AJAX and API
@@ -245,66 +249,66 @@
 // LESSON: Chaining Promises
 ///////////////////////////////////////
 
-const btn = document.querySelector('.btn-country');
-const countriesContainer = document.querySelector('.countries');
+// const btn = document.querySelector('.btn-country');
+// const countriesContainer = document.querySelector('.countries');
 
-const renderCountry = function (data, className) {
-  const html = `
-    <article class="country ${className}">
-    <img class="country__img" src="${data.flag}" />
-    <div class="country__data">
-      <h3 class="country__name">${data.name}</h3>
-      <h4 class="country__region">${data.region}</h4>
-      <p class="country__row"><span>👫</span>${(
-        data.population / 1000000
-      ).toFixed(1)} million</p>
-      <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
-      <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
-    </div>
-  </article>
-  `;
-  countriesContainer.insertAdjacentHTML('beforeend', html);
-  //   countriesContainer.style.opacity = 1;
-};
+// const renderCountry = function (data, className) {
+//   const html = `
+//     <article class="country ${className}">
+//     <img class="country__img" src="${data.flag}" />
+//     <div class="country__data">
+//       <h3 class="country__name">${data.name}</h3>
+//       <h4 class="country__region">${data.region}</h4>
+//       <p class="country__row"><span>👫</span>${(
+//         data.population / 1000000
+//       ).toFixed(1)} million</p>
+//       <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
+//       <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
+//     </div>
+//   </article>
+//   `;
+//   countriesContainer.insertAdjacentHTML('beforeend', html);
+//   //   countriesContainer.style.opacity = 1;
+// };
 
-const requestFetch = fetch('https://restcountries.eu/rest/v2/name/thailand');
-console.log(requestFetch);
+// const requestFetch = fetch('https://restcountries.eu/rest/v2/name/thailand');
+// console.log(requestFetch);
 
-const renderError = function (msg) {
-  countriesContainer.insertAdjacentText('beforeend', msg);
-  //   countriesContainer.style.opacity = 1;
-};
+// const renderError = function (msg) {
+//   countriesContainer.insertAdjacentText('beforeend', msg);
+//   //   countriesContainer.style.opacity = 1;
+// };
 
-const getCountryData = function (country) {
-  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
-    .then(response => response.json())
-    .then(data => {
-      renderCountry(data[0]);
-      const neighbor = data[0].borders[0];
+// const getCountryData = function (country) {
+//   fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+//     .then(response => response.json())
+//     .then(data => {
+//       renderCountry(data[0]);
+//       const neighbor = data[0].borders[0];
 
-      if (!neighbor) return;
+//       if (!neighbor) return;
 
-      // Country 2
-      return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbor}`);
-    })
-    .then(response => response.json())
-    .then(data => renderCountry(data, 'neighbour'))
-    .catch(err => {
-      console.log(`${err}`);
-      renderError(`Something went wrong - ${err.message}`);
-    })
-    .finally(() => {
-      countriesContainer.style.opacity = 1;
-    });
-};
+//       // Country 2
+//       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbor}`);
+//     })
+//     .then(response => response.json())
+//     .then(data => renderCountry(data, 'neighbour'))
+//     .catch(err => {
+//       console.log(`${err}`);
+//       renderError(`Something went wrong - ${err.message}`);
+//     })
+//     .finally(() => {
+//       countriesContainer.style.opacity = 1;
+//     });
+// };
 
 ///////////////////////////////////////
 // LESSON: Handling Rejected Promises
 ///////////////////////////////////////
 
-btn.addEventListener('click', function () {
-  getCountryData('Portugal');
-});
+// btn.addEventListener('click', function () {
+//   getCountryData('Portugal');
+// });
 
 ///////////////////////////////////////
 // LESSON: Asynchronous Behind the Scenes- The Event Loop
@@ -344,19 +348,19 @@ btn.addEventListener('click', function () {
 //      we were using before. It just hides them and simplifies everything
 //      for us.
 
-const whereAmI = async function (country) {
-  const response = await fetch(
-    `https://restcountries.eu/rest/v2/name/${country}`
-  ); // await fetch will return a response. Save it as a constant
-  const data = await response.json(); // parse the response with .json()
-  console.log(data);
-  renderCountry(data[0]);
-};
+// const whereAmI = async function (country) {
+//   const response = await fetch(
+//     `https://restcountries.eu/rest/v2/name/${country}`
+//   ); // await fetch will return a response. Save it as a constant
+//   const data = await response.json(); // parse the response with .json()
+//   console.log(data);
+//   renderCountry(data[0]);
+// };
 
-whereAmI('Brunei');
-console.log(
-  'This code should come out prior to the results of the whereAmI function'
-);
+// whereAmI('Brunei');
+// console.log(
+//   'This code should come out prior to the results of the whereAmI function'
+// );
 
 ///////////////////////////////////////
 // LESSON: Error handling with try..catch
@@ -364,10 +368,14 @@ console.log(
 
 // -    With async/await we use the try/catch method to handle errors
 
-try {
-  let y = 1;
-  const x = 2;
-  x = 3;
-} catch (err) {
-  alert(err.message);
-}
+// try {
+//   let y = 1;
+//   const x = 2;
+//   x = 3;
+// } catch (err) {
+//   alert(err.message);
+// }
+
+///////////////////////////////////////
+// LESSON: Running Promises in Parallel
+///////////////////////////////////////
